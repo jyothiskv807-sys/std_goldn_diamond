@@ -49,11 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ==================== 3. LIVE SEARCH BAR & INSTANT DROPDOWN ====================
-  const searchInput = document.getElementById('headerSearchInput');
-  const searchDropdown = document.getElementById('searchDropdown');
-  const searchResultsList = document.getElementById('searchResultsList');
-
+  // ==================== 3. LIVE SEARCH BAR & INSTANT DROPDOWN (DESKTOP & MOBILE) ====================
   const catalogueData = [
     { name: "Kerala Heritage Kasumala", category: "916 Gold", image: "assets/images/gold-jewellery.jpg", target: "#new-arrivals" },
     { name: "Solitaire Cushion Diamond Ring", category: "Certified Diamonds", image: "assets/images/solitaire-ring.jpg", target: "#new-arrivals" },
@@ -66,12 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: "Custom Made-to-Order Heirlooms", category: "Bespoke Styling", image: "assets/images/showroom-portrait.jpg", target: "#story-banner" }
   ];
 
-  if (searchInput && searchDropdown && searchResultsList) {
-    searchInput.addEventListener('input', (e) => {
+  function setupSearch(inputEl, dropdownEl, listEl) {
+    if (!inputEl || !dropdownEl || !listEl) return;
+
+    inputEl.addEventListener('input', (e) => {
       const query = e.target.value.trim().toLowerCase();
       if (query.length < 2) {
-        searchDropdown.classList.add('hidden', 'opacity-0');
-        searchDropdown.classList.remove('opacity-100');
+        dropdownEl.classList.add('hidden', 'opacity-0');
+        dropdownEl.classList.remove('opacity-100');
         return;
       }
 
@@ -80,10 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
         item.category.toLowerCase().includes(query)
       );
 
-      searchResultsList.innerHTML = '';
+      listEl.innerHTML = '';
 
       if (matches.length === 0) {
-        searchResultsList.innerHTML = `
+        listEl.innerHTML = `
           <div class="p-4 text-center text-xs text-[#EDE8DC]/60 font-light">
             No matching jewellery found. <br>
             <a href="https://wa.me/919447251916?text=Hi%2C%20I%20am%20looking%20for%20${encodeURIComponent(query)}%20at%20Standard%20Gold%20Payyavoor" target="_blank" class="text-royalGold hover:underline font-medium block mt-1">
@@ -97,42 +95,53 @@ document.addEventListener('DOMContentLoaded', () => {
           itemEl.href = item.target;
           itemEl.className = 'flex items-center gap-3 p-3 rounded-lg hover:bg-[#1f1b16] transition-colors border-b border-[#3A3320]/40 last:border-b-0 group';
           itemEl.innerHTML = `
-            <img src="${item.image}" alt="${item.name}" class="w-10 h-10 rounded-md object-cover border border-royalGold/30 group-hover:scale-105 transition-transform">
+            <img src="${item.image}" alt="${item.name}" class="w-10 h-10 rounded-md object-cover border border-royalGold/30 group-hover:scale-105 transition-transform flex-shrink-0">
             <div class="flex-1 min-w-0">
               <h5 class="text-xs font-serif font-bold text-softWhite group-hover:text-lightGold truncate transition-colors">${item.name}</h5>
               <span class="text-[10px] text-royalGold/90 font-medium block">${item.category}</span>
             </div>
-            <span class="text-[10px] font-medium text-lightGold/80 group-hover:translate-x-1 transition-transform">View →</span>
+            <span class="text-[10px] font-medium text-lightGold/80 group-hover:translate-x-1 transition-transform flex-shrink-0">View →</span>
           `;
           itemEl.addEventListener('click', () => {
-            searchDropdown.classList.add('hidden', 'opacity-0');
-            searchInput.value = '';
+            dropdownEl.classList.add('hidden', 'opacity-0');
+            inputEl.value = '';
           });
-          searchResultsList.appendChild(itemEl);
+          listEl.appendChild(itemEl);
         });
       }
 
-      searchDropdown.classList.remove('hidden');
+      dropdownEl.classList.remove('hidden');
       setTimeout(() => {
-        searchDropdown.classList.remove('opacity-0');
-        searchDropdown.classList.add('opacity-100');
+        dropdownEl.classList.remove('opacity-0');
+        dropdownEl.classList.add('opacity-100');
       }, 10);
     });
 
     // Close on outside click
     document.addEventListener('click', (e) => {
-      if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
-        searchDropdown.classList.add('hidden', 'opacity-0');
+      if (!inputEl.contains(e.target) && !dropdownEl.contains(e.target)) {
+        dropdownEl.classList.add('hidden', 'opacity-0');
       }
     });
 
     // Close on Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        searchDropdown.classList.add('hidden', 'opacity-0');
+        dropdownEl.classList.add('hidden', 'opacity-0');
       }
     });
   }
+
+  setupSearch(
+    document.getElementById('headerSearchInput'),
+    document.getElementById('searchDropdown'),
+    document.getElementById('searchResultsList')
+  );
+  setupSearch(
+    document.getElementById('mobileSearchInput'),
+    document.getElementById('mobileSearchDropdown'),
+    document.getElementById('mobileSearchResultsList')
+  );
 
   // ==================== 4. CURATED CATEGORY FILTER TABS (#curated) ====================
   const tabButtons = document.querySelectorAll('.curated-tab-btn');
