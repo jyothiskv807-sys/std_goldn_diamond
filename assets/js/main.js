@@ -354,32 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ==================== 7. BILINGUAL MALAYALAM TOGGLE ====================
-  const langToggleBtns = document.querySelectorAll('.lang-toggle-btn');
-  const mlElements = document.querySelectorAll('.lang-ml');
-  let isMalayalam = false;
-
-  function updateLanguage(mlActive) {
-    isMalayalam = mlActive;
-    mlElements.forEach(el => {
-      el.classList.toggle('hidden', !isMalayalam);
-    });
-    langToggleBtns.forEach(btn => {
-      btn.innerHTML = isMalayalam ? '🌐 EN' : '🌐 മലയാളം';
-      btn.setAttribute('aria-label', isMalayalam ? 'Switch to English' : 'Switch to Malayalam');
-      btn.setAttribute('title', isMalayalam ? 'Switch to English' : 'മലയാളത്തിലേക്ക് മാറ്റുക');
-    });
-  }
-
-  langToggleBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      updateLanguage(!isMalayalam);
-    });
-  });
-
-  // ==================== 8. SCROLL REVEAL ANIMATIONS ====================
+  // ==================== 7. SCROLL REVEAL ANIMATIONS ====================
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -396,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // ==================== 9. TACTILE CLICK RIPPLE & FULL-CARD INTERACTIONS ====================
+  // ==================== 8. TACTILE CLICK RIPPLE & FULL-CARD INTERACTIONS ====================
   function createGoldRipple(e) {
     const target = e.currentTarget;
     if (!target) return;
@@ -435,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Attach ripple to all interactive buttons, cards, pills, tabs
   const rippleElements = document.querySelectorAll(
-    'button, .sheen-btn, .gold-gradient-bg, a.rounded-md, a.rounded-full, a.rounded-xl, .curated-tab-btn, .category-clean-tile, .copy-phone-btn, #prevTestimonialBtn, #nextTestimonialBtn, #langToggleBtn, #langToggleBtnDesktop, #mobileMenuBtn, #closeMobileMenuBtn, #new-arrivals article, .portrait-lifestyle-card, aside[aria-label="Mobile Quick Actions"] a'
+    'button, .sheen-btn, .gold-gradient-bg, a.rounded-md, a.rounded-full, a.rounded-xl, .curated-tab-btn, .category-clean-tile, .copy-phone-btn, #prevTestimonialBtn, #nextTestimonialBtn, #mobileMenuBtn, #closeMobileMenuBtn, #new-arrivals article, .portrait-lifestyle-card, aside[aria-label="Mobile Quick Actions"] a'
   );
   rippleElements.forEach(el => {
     el.addEventListener('pointerdown', createGoldRipple, { passive: true });

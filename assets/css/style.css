@@ -598,8 +598,6 @@ a.rounded-full:active,
 a.rounded-xl:active,
 .curated-tab-btn:active,
 .copy-phone-btn:active,
-#langToggleBtn:active,
-#langToggleBtnDesktop:active,
 #mobileMenuBtn:active,
 #closeMobileMenuBtn:active {
   transform: scale(0.95) translateY(0) !important;
@@ -615,9 +613,7 @@ a.rounded-xl,
 button.rounded-md,
 button.rounded-full,
 button.rounded-xl,
-.copy-phone-btn,
-#langToggleBtn,
-#langToggleBtnDesktop {
+.copy-phone-btn {
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
               box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
               background-color 0.25s ease, 

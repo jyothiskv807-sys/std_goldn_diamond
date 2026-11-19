@@ -60,7 +60,7 @@
   </script>
 
   <!-- Custom Styles (with cache buster) -->
-  <link rel="stylesheet" href="assets/css/style.css?v=20261120l">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261120m">
 
   <!-- JSON-LD LocalBusiness Schema -->
   <script type="application/ld+json">
@@ -168,11 +168,6 @@
 
           <!-- Right: Desktop Actions -->
           <div class="flex items-center space-x-2.5 sm:space-x-3 flex-shrink-0">
-            <!-- Bilingual Malayalam Toggle -->
-            <button id="langToggleBtnDesktop" type="button" class="lang-toggle-btn text-xs px-2.5 py-1.5 rounded-full border border-royalGold/40 text-[#F1D77A] hover:bg-royalGold/15 transition flex items-center gap-1 active:scale-95 whitespace-nowrap" aria-label="Toggle language">
-              🌐 മലയാളം
-            </button>
-
             <!-- Direct Phone -->
             <a href="tel:+919447251916" class="p-1.5 text-lightGold hover:text-white rounded-full border border-royalGold/30 hover:bg-royalGold/15 transition flex items-center justify-center" title="Call Showroom 094472 51916" aria-label="Call Showroom">
               <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -216,27 +211,22 @@
       <!-- MOBILE / TABLET 3-ROW HEADER (< 1024px) -->
       <div class="lg:hidden">
         
-        <!-- Row 1: Brand & Top Controls -->
-        <div class="bg-[#0A0A0A] border-b border-[#3A3320] text-softWhite px-3 py-2.5 pt-[calc(0.6rem+env(safe-area-inset-top))] flex items-center justify-between gap-2">
+        <!-- Row 1: Brand & Top Controls (Bilingual toggle removed, sub-label in full without truncation) -->
+        <div class="bg-[#0A0A0A] border-b border-[#3A3320] text-softWhite px-3.5 py-2.5 pt-[calc(0.6rem+env(safe-area-inset-top))] flex items-center justify-between gap-3">
           
           <!-- Left: Brand Logo & Title -->
-          <a href="#hero" class="flex items-center space-x-2 min-w-0 shrink" aria-label="Standard Gold and Diamonds Home">
-            <div class="relative w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 flex items-center justify-center">
+          <a href="#hero" class="flex items-center space-x-2.5 min-w-0" aria-label="Standard Gold and Diamonds Home">
+            <div class="relative w-9 h-9 flex-shrink-0 flex items-center justify-center">
               <img src="assets/images/logo.png" alt="Standard Gold &amp; Diamonds SFJ Logo" class="w-full h-full object-contain filter drop-shadow-[0_2px_8px_rgba(212,175,55,0.4)]">
             </div>
             <div class="flex flex-col min-w-0">
-              <span class="font-serif text-base sm:text-lg font-bold tracking-wider gold-gradient-text uppercase leading-none truncate">Standard</span>
-              <span class="text-[9.5px] sm:text-[10px] tracking-wider text-royalGold font-medium leading-tight truncate mt-0.5">Gold &amp; Diamonds • Payyavoor</span>
+              <span class="font-serif text-lg font-bold tracking-wider gold-gradient-text uppercase leading-none">Standard</span>
+              <span class="text-[10px] sm:text-[11px] tracking-wider text-royalGold font-medium leading-tight whitespace-nowrap mt-0.5">Gold &amp; Diamonds • Payyavoor</span>
             </div>
           </a>
 
-          <!-- Right: Compact Controls (All 3 fit cleanly on 360px screens) -->
-          <div class="flex items-center gap-1.5 shrink-0">
-            <!-- Bilingual Malayalam Toggle -->
-            <button id="langToggleBtn" type="button" class="lang-toggle-btn text-[11px] font-medium px-2.5 py-1.5 min-h-[34px] rounded-full border border-[#D4AF37]/50 text-[#F1D77A] hover:bg-royalGold/15 transition whitespace-nowrap flex items-center justify-center active:scale-95" aria-label="Toggle language">
-              🌐 മലയാളം
-            </button>
-
+          <!-- Right: Compact Controls (Only Call & Hamburger) -->
+          <div class="flex items-center space-x-2 flex-shrink-0">
             <!-- Direct Call Icon -->
             <a href="tel:+919447251916" class="w-9 h-9 min-h-[36px] min-w-[36px] rounded-full border border-[#3A3320] flex items-center justify-center text-lightGold hover:bg-royalGold/15 transition" title="Call Showroom 094472 51916" aria-label="Call Showroom">
               <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -245,7 +235,7 @@
             </a>
 
             <!-- Mobile Hamburger Trigger -->
-            <button id="mobileMenuBtn" type="button" class="w-9 h-9 min-h-[36px] min-w-[36px] flex items-center justify-center text-[#FAF6EC] hover:text-royalGold focus:outline-none" aria-label="Open menu">
+            <button id="mobileMenuBtn" type="button" class="w-10 h-10 min-h-[40px] min-w-[40px] flex items-center justify-center text-[#FAF6EC] hover:text-royalGold focus:outline-none" aria-label="Open menu">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
@@ -346,20 +336,23 @@
       
       <!-- MOBILE HERO VIEW (< 1024px: Vertical 2-Part Stack) -->
       <div class="lg:hidden flex flex-col bg-[#0A0A0A] w-full">
-        <!-- Top Unobstructed Photo Frame (Zero text or buttons over bride or necklaces) -->
-        <div class="relative w-full aspect-[4/3] sm:aspect-[16/10] overflow-hidden bg-[#0A0A0A]">
+        <!-- Top Unobstructed Photo Frame (Height adjusted to h-[310px] sm:h-[380px] to pull CTAs above the fold) -->
+        <div class="relative w-full h-[310px] sm:h-[380px] overflow-hidden bg-[#0A0A0A]">
           <img 
             src="assets/images/hero-editorial.jpg" 
             alt="Kerala Bridal Gold and Diamond Jewellery - Standard Gold and Diamonds Payyavoor" 
             class="w-full h-full object-cover object-top"
             loading="eager"
           >
-          <!-- Gentle bottom fade so photo blends seamlessly into dark canvas below -->
+          <!-- Soft Dark Vignettes Melting Background Walls into #0A0A0A while leaving Bride's Face & 22K Gold Well-Lit -->
+          <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#0A0A0A] to-transparent pointer-events-none"></div>
+          <div class="absolute inset-y-0 left-0 w-12 sm:w-16 bg-gradient-to-r from-[#0A0A0A] to-transparent pointer-events-none"></div>
+          <div class="absolute inset-y-0 right-0 w-12 sm:w-16 bg-gradient-to-l from-[#0A0A0A] to-transparent pointer-events-none"></div>
           <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none"></div>
         </div>
 
-        <!-- Bottom Typography & CTA Block -->
-        <div class="px-4 pt-2 pb-9 bg-[#0A0A0A] space-y-3.5">
+        <!-- Bottom Typography & CTA Block (Pulled cleanly above the fold) -->
+        <div class="px-4 pt-2.5 pb-8 bg-[#0A0A0A] space-y-3">
           <!-- Micro Trust Pill -->
           <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#14120E] border border-royalGold/40 text-[11px] font-medium text-[#F1D77A] shadow-md">
             <span class="flex items-center text-amber-400">
@@ -373,22 +366,17 @@
           </div>
 
           <!-- Main Headline -->
-          <h1 class="font-serif text-[2.1rem] sm:text-5xl leading-[1.15] text-[#FAF6EC] font-bold tracking-tight">
+          <h1 class="font-serif text-[2.05rem] sm:text-5xl leading-[1.14] text-[#FAF6EC] font-bold tracking-tight">
             Timeless Elegance, Crafted for You.
           </h1>
 
-          <!-- Toggleable Malayalam Subtitle -->
-          <div class="lang-ml hidden text-sm text-[#F1D77A] font-medium font-serif mt-2">
-            തനിമയാർന്ന സ്വർണ്ണ, വജ്രാഭരണങ്ങളുടെ വിസ്മയ ശേഖരം • പയ്യാവൂർ, കണ്ണൂർ
-          </div>
-
           <!-- Subtext -->
-          <p class="text-sm sm:text-base text-[#EDE8DC]/90 font-light leading-relaxed mt-2.5">
+          <p class="text-xs sm:text-base text-[#EDE8DC]/90 font-light leading-relaxed">
             Pure 916 Gold • Certified Diamonds • Bespoke Kerala Bridal Trousseaus in Payyavoor, Kannur. Celebrating Malabar's finest wedding traditions.
           </p>
 
-          <!-- Stacked CTA Buttons -->
-          <div class="pt-2 flex flex-col gap-2.5 w-full">
+          <!-- Stacked CTA Buttons (Immediately visible without scrolling) -->
+          <div class="pt-1.5 flex flex-col gap-2.5 w-full">
             <a href="#new-arrivals" class="bg-[#FAF6EC] text-[#0A0A0A] hover:bg-royalGold transition-all duration-300 rounded-md px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-center shadow-lg min-h-[44px] flex items-center justify-center">
               Explore Collections
             </a>
@@ -398,7 +386,7 @@
           </div>
 
           <!-- Showroom Proof Line -->
-          <div class="pt-2 text-xs text-[#EDE8DC]/80 font-light flex flex-wrap items-center gap-1.5">
+          <div class="pt-1 text-xs text-[#EDE8DC]/80 font-light flex flex-wrap items-center gap-1.5">
             <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
             <span>Open Today until 7:30 PM</span>
             <span>•</span>
@@ -409,7 +397,7 @@
         </div>
       </div>
 
-      <!-- DESKTOP HERO VIEW (≥ 1024px: Asymmetrical Editorial Split) -->
+      <!-- DESKTOP HERO VIEW (≥ 1024px: Asymmetrical Editorial Split - UNTOUCHED) -->
       <div class="hidden lg:flex relative w-full min-h-[560px] xl:min-h-[620px] bg-[#0A0A0A] overflow-hidden items-center">
         <!-- Right Side Visual (54% width, full height, right aligned) -->
         <div class="absolute top-0 right-0 lg:w-[54%] h-full z-0 overflow-hidden">
@@ -444,11 +432,6 @@
             <h1 class="font-serif text-5xl xl:text-6xl font-bold leading-[1.12] text-softWhite tracking-tight">
               Timeless Elegance, Crafted for You.
             </h1>
-
-            <!-- Toggleable Malayalam Subtitle -->
-            <div class="lang-ml hidden text-sm sm:text-base text-[#F1D77A] font-medium font-serif mt-1.5">
-              തനിമയാർന്ന സ്വർണ്ണ, വജ്രാഭരണങ്ങളുടെ വിസ്മയ ശേഖരം • പയ്യാവൂർ, കണ്ണൂർ
-            </div>
 
             <!-- Subtext -->
             <p class="text-base xl:text-lg text-[#EDE8DC]/90 font-light leading-relaxed">
@@ -1297,6 +1280,6 @@
   </div>
 
   <!-- JavaScript (with cache buster) -->
-  <script src="assets/js/main.js?v=20261120l"></script>
+  <script src="assets/js/main.js?v=20261120m"></script>
 </body>
 </html>
