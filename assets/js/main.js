@@ -148,8 +148,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const tabPanels = document.querySelectorAll('.curated-tab-panel');
 
   function activateTab(targetTabId) {
+    if (!targetTabId) return;
+
     tabButtons.forEach(btn => {
-      if (btn.getAttribute('data-tab') === targetTabId) {
+      const btnTab = btn.getAttribute('data-tab');
+      if (btnTab === targetTabId) {
         btn.classList.add('active');
         btn.setAttribute('aria-selected', 'true');
       } else {
@@ -161,10 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
     tabPanels.forEach(panel => {
       if (panel.id === `tab-panel-${targetTabId}`) {
         panel.classList.remove('hidden');
-        setTimeout(() => {
-          panel.classList.remove('opacity-0');
-          panel.classList.add('opacity-100');
-        }, 10);
+        panel.classList.remove('opacity-0');
+        panel.classList.add('opacity-100');
       } else {
         panel.classList.add('hidden', 'opacity-0');
         panel.classList.remove('opacity-100');
@@ -172,8 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Expose globally for instant inline / cross-component triggering
+  window.sfjActivateTab = activateTab;
+
   tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
       const target = btn.getAttribute('data-tab');
       activateTab(target);
     });
@@ -186,6 +191,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetTab = trigger.getAttribute('data-switch-tab');
       if (targetTab) {
         activateTab(targetTab);
+        const curatedSection = document.getElementById('curated');
+        if (curatedSection) {
+          const headerOffset = 110;
+          const elementPosition = curatedSection.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
       }
     });
   });
@@ -196,12 +211,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.getElementById('nextTestimonialBtn');
   const dots = document.querySelectorAll('.testimonial-dot');
   let currentSlide = 0;
-  const totalSlides = 3;
+  const totalSlides = (carouselContainer && carouselContainer.children.length) ? carouselContainer.children.length : 3;
 
   function goToSlide(slideIndex) {
     if (!carouselContainer) return;
     currentSlide = (slideIndex + totalSlides) % totalSlides;
-    carouselContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    // Calculate percentage based on total slide count in the flex track
+    const offsetPercentage = (currentSlide * 100) / totalSlides;
+    carouselContainer.style.transform = `translateX(-${offsetPercentage}%)`;
     dots.forEach((dot, idx) => {
       if (idx === currentSlide) {
         dot.classList.add('bg-royalGold', 'w-7');
@@ -213,24 +230,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
-  if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+  let testimonialInterval = setInterval(() => goToSlide(currentSlide + 1), 6000);
+
+  function resetTestimonialTimer() {
+    clearInterval(testimonialInterval);
+    testimonialInterval = setInterval(() => goToSlide(currentSlide + 1), 6000);
+  }
+
+  // Expose globally
+  window.sfjGoToSlide = (idx) => { goToSlide(idx); resetTestimonialTimer(); };
+  window.sfjPrevSlide = () => { goToSlide(currentSlide - 1); resetTestimonialTimer(); };
+  window.sfjNextSlide = () => { goToSlide(currentSlide + 1); resetTestimonialTimer(); };
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.sfjPrevSlide();
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.sfjNextSlide();
+    });
+  }
   dots.forEach(dot => {
-    dot.addEventListener('click', () => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
       const slide = parseInt(dot.getAttribute('data-slide') || '0', 10);
-      goToSlide(slide);
+      window.sfjGoToSlide(slide);
     });
   });
 
-  // Auto advance testimonial every 6 seconds
-  let testimonialInterval = setInterval(() => goToSlide(currentSlide + 1), 6000);
   const testimonialSection = document.getElementById('testimonials');
   if (testimonialSection) {
     testimonialSection.addEventListener('mouseenter', () => clearInterval(testimonialInterval));
-    testimonialSection.addEventListener('mouseleave', () => {
-      clearInterval(testimonialInterval);
-      testimonialInterval = setInterval(() => goToSlide(currentSlide + 1), 6000);
-    });
+    testimonialSection.addEventListener('mouseleave', resetTestimonialTimer);
   }
 
   // ==================== 6. ONE-CLICK PHONE NUMBER COPY ====================
