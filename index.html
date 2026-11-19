@@ -60,7 +60,7 @@
   </script>
 
   <!-- Custom Styles (with cache buster) -->
-  <link rel="stylesheet" href="assets/css/style.css?v=20261120i">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261120j">
 
   <!-- JSON-LD LocalBusiness Schema -->
   <script type="application/ld+json">
@@ -110,6 +110,20 @@
 </head>
 <body class="bg-ivory text-[#1C1C1C] antialiased selection:bg-royalGold selection:text-darkBg max-w-full overflow-x-clip">
 
+  <!-- ==================== LUXURY BRAND PRELOADER / SPLASH SCREEN ==================== -->
+  <div id="brandPreloader" class="fixed inset-0 z-[9999] bg-[#0A0A0A] flex flex-col items-center justify-center px-6 text-center transition-opacity duration-500" aria-label="Loading Standard Gold & Diamonds">
+    <div id="preloaderContent" class="flex flex-col items-center transform transition-all duration-700 ease-out scale-95 opacity-0">
+      <img src="assets/images/logo.png" alt="Standard Gold &amp; Diamonds SFJ Logo" class="w-14 h-14 sm:w-20 sm:h-20 mb-3 object-contain filter drop-shadow-[0_4px_16px_rgba(212,175,55,0.45)]">
+      <h1 class="font-serif text-2xl sm:text-4xl text-[#F1D77A] font-semibold tracking-wide preloader-shimmer">
+        Standard Gold &amp; Diamonds
+      </h1>
+      <p class="text-[11px] sm:text-xs tracking-[0.25em] uppercase text-[#EDE8DC]/70 mt-1.5 font-medium">
+        Payyavoor, Kannur
+      </p>
+      <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-royalGold to-transparent mt-4 opacity-75"></div>
+    </div>
+  </div>
+
   <!-- Master Page Wrapper Preventing Horizontal Scroll -->
   <div class="overflow-x-clip w-full">
 
@@ -154,6 +168,11 @@
 
           <!-- Right: Desktop Actions -->
           <div class="flex items-center space-x-2.5 sm:space-x-3 flex-shrink-0">
+            <!-- Bilingual Malayalam Toggle -->
+            <button id="langToggleBtnDesktop" type="button" class="lang-toggle-btn text-xs px-2.5 py-1.5 rounded-full border border-royalGold/40 text-[#F1D77A] hover:bg-royalGold/15 transition flex items-center gap-1 active:scale-95 whitespace-nowrap" aria-label="Toggle language">
+              🌐 മലയാളം
+            </button>
+
             <!-- Direct Phone -->
             <a href="tel:+919447251916" class="p-1.5 text-lightGold hover:text-white rounded-full border border-royalGold/30 hover:bg-royalGold/15 transition flex items-center justify-center" title="Call Showroom 094472 51916" aria-label="Call Showroom">
               <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -198,21 +217,26 @@
       <div class="lg:hidden">
         
         <!-- Row 1: Brand & Top Controls -->
-        <div class="bg-[#0A0A0A] border-b border-[#3A3320] text-softWhite px-3.5 py-2.5 pt-[calc(0.6rem+env(safe-area-inset-top))] flex items-center justify-between gap-2">
+        <div class="bg-[#0A0A0A] border-b border-[#3A3320] text-softWhite px-3 py-2.5 pt-[calc(0.6rem+env(safe-area-inset-top))] flex items-center justify-between gap-2">
           
           <!-- Left: Brand Logo & Title -->
-          <a href="#hero" class="flex items-center space-x-2.5 min-w-0" aria-label="Standard Gold and Diamonds Home">
-            <div class="relative w-9 h-9 flex-shrink-0 flex items-center justify-center">
+          <a href="#hero" class="flex items-center space-x-2 min-w-0 shrink" aria-label="Standard Gold and Diamonds Home">
+            <div class="relative w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 flex items-center justify-center">
               <img src="assets/images/logo.png" alt="Standard Gold &amp; Diamonds SFJ Logo" class="w-full h-full object-contain filter drop-shadow-[0_2px_8px_rgba(212,175,55,0.4)]">
             </div>
             <div class="flex flex-col min-w-0">
-              <span class="font-serif text-lg font-bold tracking-wider gold-gradient-text uppercase leading-none truncate">Standard</span>
-              <span class="text-[10px] tracking-wider text-royalGold font-medium leading-tight truncate mt-0.5">Gold &amp; Diamonds • Payyavoor</span>
+              <span class="font-serif text-base sm:text-lg font-bold tracking-wider gold-gradient-text uppercase leading-none truncate">Standard</span>
+              <span class="text-[9.5px] sm:text-[10px] tracking-wider text-royalGold font-medium leading-tight truncate mt-0.5">Gold &amp; Diamonds • Payyavoor</span>
             </div>
           </a>
 
-          <!-- Right: Compact Controls -->
-          <div class="flex items-center space-x-2 flex-shrink-0">
+          <!-- Right: Compact Controls (All 3 fit cleanly on 360px screens) -->
+          <div class="flex items-center gap-1.5 shrink-0">
+            <!-- Bilingual Malayalam Toggle -->
+            <button id="langToggleBtn" type="button" class="lang-toggle-btn text-[11px] font-medium px-2.5 py-1.5 min-h-[34px] rounded-full border border-[#D4AF37]/50 text-[#F1D77A] hover:bg-royalGold/15 transition whitespace-nowrap flex items-center justify-center active:scale-95" aria-label="Toggle language">
+              🌐 മലയാളം
+            </button>
+
             <!-- Direct Call Icon -->
             <a href="tel:+919447251916" class="w-9 h-9 min-h-[36px] min-w-[36px] rounded-full border border-[#3A3320] flex items-center justify-center text-lightGold hover:bg-royalGold/15 transition" title="Call Showroom 094472 51916" aria-label="Call Showroom">
               <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -221,7 +245,7 @@
             </a>
 
             <!-- Mobile Hamburger Trigger -->
-            <button id="mobileMenuBtn" type="button" class="w-10 h-10 min-h-[40px] min-w-[40px] flex items-center justify-center text-[#FAF6EC] hover:text-royalGold focus:outline-none" aria-label="Open menu">
+            <button id="mobileMenuBtn" type="button" class="w-9 h-9 min-h-[36px] min-w-[36px] flex items-center justify-center text-[#FAF6EC] hover:text-royalGold focus:outline-none" aria-label="Open menu">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
@@ -320,33 +344,92 @@
     <!-- ==================== 2. RESPONSIVE HERO SECTION ==================== -->
     <section id="hero" class="relative w-full overflow-hidden bg-[#0A0A0A]">
       
-      <!-- RESPONSIVE HERO VIEW (Unified full-bleed blended background image layout) -->
-      <div class="relative w-full min-h-[480px] sm:min-h-[500px] lg:min-h-[490px] flex items-start">
-        <!-- Background Image with Responsive Contrast Overlays -->
-        <div class="absolute inset-0 z-0 overflow-hidden">
+      <!-- MOBILE HERO VIEW (< 1024px: Vertical 2-Part Stack) -->
+      <div class="lg:hidden flex flex-col bg-[#0A0A0A] w-full">
+        <!-- Top Unobstructed Photo Frame (Zero text or buttons over bride or necklaces) -->
+        <div class="relative w-full aspect-[4/3] sm:aspect-[16/10] overflow-hidden bg-[#0A0A0A]">
           <img 
             src="assets/images/hero-editorial.jpg" 
             alt="Kerala Bridal Gold and Diamond Jewellery - Standard Gold and Diamonds Payyavoor" 
-            class="w-full h-full object-cover object-top sm:object-center lg:object-center"
-            style="object-position: center 10%;"
+            class="w-full h-full object-cover object-top"
             loading="eager"
           >
-          <!-- Mobile Atmospheric Film Tint (Gentle dark tint so bride & jewellery are clearly visible in the background) -->
-          <div class="absolute inset-0 bg-black/40 lg:hidden"></div>
-          <!-- Mobile Top/Bottom Vignette (Fades bottom smoothly into page canvas) -->
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-black/35 lg:hidden"></div>
-
-          <!-- Desktop Gradient Vignettes (100% untouched for widescreen view) -->
-          <div class="absolute inset-0 hidden lg:block bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/75 to-transparent"></div>
-          <div class="absolute inset-0 hidden lg:block bg-gradient-to-t from-[#0A0A0A] via-transparent to-black/30"></div>
+          <!-- Gentle bottom fade so photo blends seamlessly into dark canvas below -->
+          <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none"></div>
         </div>
 
-        <!-- Content Overlay (Pushed directly below header with zero awkward gap) -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3.5 sm:pt-5 lg:pt-6 pb-8 lg:pb-10 w-full">
-          <div class="max-w-xl lg:max-w-2xl space-y-3.5 sm:space-y-4 lg:space-y-5 reveal-on-scroll">
+        <!-- Bottom Typography & CTA Block -->
+        <div class="px-4 pt-2 pb-9 bg-[#0A0A0A] space-y-3.5">
+          <!-- Micro Trust Pill -->
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#14120E] border border-royalGold/40 text-[11px] font-medium text-[#F1D77A] shadow-md">
+            <span class="flex items-center text-amber-400">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </span>
+            <span class="font-bold">4.8 ★</span>
+            <span class="text-[#EDE8DC]/50">•</span>
+            <span class="text-[#EDE8DC]">90 Google Reviews</span>
+            <span class="text-[#EDE8DC]/50">•</span>
+            <span class="text-royalGold">Payyavoor, Kannur</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="font-serif text-[2.1rem] sm:text-5xl leading-[1.15] text-[#FAF6EC] font-bold tracking-tight">
+            Timeless Elegance, Crafted for You.
+          </h1>
+
+          <!-- Toggleable Malayalam Subtitle -->
+          <div class="lang-ml hidden text-sm text-[#F1D77A] font-medium font-serif mt-2">
+            തനിമയാർന്ന സ്വർണ്ണ, വജ്രാഭരണങ്ങളുടെ വിസ്മയ ശേഖരം • പയ്യാവൂർ, കണ്ണൂർ
+          </div>
+
+          <!-- Subtext -->
+          <p class="text-sm sm:text-base text-[#EDE8DC]/90 font-light leading-relaxed mt-2.5">
+            Pure 916 Gold • Certified Diamonds • Bespoke Kerala Bridal Trousseaus in Payyavoor, Kannur. Celebrating Malabar's finest wedding traditions.
+          </p>
+
+          <!-- Stacked CTA Buttons -->
+          <div class="pt-2 flex flex-col gap-2.5 w-full">
+            <a href="#new-arrivals" class="bg-[#FAF6EC] text-[#0A0A0A] hover:bg-royalGold transition-all duration-300 rounded-md px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-center shadow-lg min-h-[44px] flex items-center justify-center">
+              Explore Collections
+            </a>
+            <a href="https://wa.me/919447251916?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20jewellery%20collections%20at%20Standard%20Gold%20Payyavoor." target="_blank" rel="noopener noreferrer" class="bg-[#14120E] border border-royalGold text-lightGold hover:bg-royalGold/20 transition-all duration-300 rounded-md px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-center shadow-md min-h-[44px] flex items-center justify-center gap-2">
+              <span>Enquire on WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Showroom Proof Line -->
+          <div class="pt-2 text-xs text-[#EDE8DC]/80 font-light flex flex-wrap items-center gap-1.5">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>Open Today until 7:30 PM</span>
+            <span>•</span>
+            <span>Main Road, Payyavoor</span>
+            <span>•</span>
+            <a href="tel:+919447251916" class="text-lightGold hover:underline font-medium">094472 51916</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESKTOP HERO VIEW (≥ 1024px: Asymmetrical Editorial Split) -->
+      <div class="hidden lg:flex relative w-full min-h-[560px] xl:min-h-[620px] bg-[#0A0A0A] overflow-hidden items-center">
+        <!-- Right Side Visual (54% width, full height, right aligned) -->
+        <div class="absolute top-0 right-0 lg:w-[54%] h-full z-0 overflow-hidden">
+          <img 
+            src="assets/images/hero-editorial.jpg" 
+            alt="Kerala Bridal Gold and Diamond Jewellery - Standard Gold and Diamonds Payyavoor" 
+            class="w-full h-full object-cover object-top"
+            loading="eager"
+          >
+          <!-- Seamless Center Blend: Left-to-right gradient so left stays solid Rich Black, bride on right stays bright & warm -->
+          <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/85 via-45% to-transparent pointer-events-none"></div>
+          <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A0A0A] to-transparent pointer-events-none"></div>
+        </div>
+
+        <!-- Left Side Content Container (Strictly on left 50%) -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full flex items-center">
+          <div class="lg:w-[50%] pr-6 space-y-4 reveal-on-scroll">
             
             <!-- Micro Trust Pill -->
-            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#14120E]/90 border border-royalGold/40 text-[11px] sm:text-xs font-medium text-[#F1D77A] shadow-lg backdrop-blur-md">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#14120E]/90 border border-royalGold/40 text-xs font-medium text-[#F1D77A] shadow-lg backdrop-blur-md">
               <span class="flex items-center text-amber-400">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
               </span>
@@ -358,27 +441,32 @@
             </div>
 
             <!-- Main Headline -->
-            <h1 class="font-serif text-[2.15rem] sm:text-5xl lg:text-6xl font-bold leading-[1.12] text-softWhite tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <h1 class="font-serif text-5xl xl:text-6xl font-bold leading-[1.12] text-softWhite tracking-tight">
               Timeless Elegance, Crafted for You.
             </h1>
 
+            <!-- Toggleable Malayalam Subtitle -->
+            <div class="lang-ml hidden text-sm sm:text-base text-[#F1D77A] font-medium font-serif mt-1.5">
+              തനിമയാർന്ന സ്വർണ്ണ, വജ്രാഭരണങ്ങളുടെ വിസ്മയ ശേഖരം • പയ്യാവൂർ, കണ്ണൂർ
+            </div>
+
             <!-- Subtext -->
-            <p class="text-sm sm:text-base lg:text-lg text-[#EDE8DC] font-light leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
+            <p class="text-base xl:text-lg text-[#EDE8DC]/90 font-light leading-relaxed">
               Pure 916 Gold • Certified Diamonds • Bespoke Kerala Bridal Trousseaus in Payyavoor, Kannur. Celebrating Malabar's finest wedding traditions.
             </p>
 
             <!-- CTA Buttons -->
-            <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5">
-              <a href="#new-arrivals" class="bg-[#FAF6EC] text-[#0A0A0A] hover:bg-royalGold transition-all duration-300 rounded-md px-7 py-3.5 sm:py-3 text-xs font-semibold uppercase tracking-wider shadow-xl flex items-center justify-center min-h-[44px]">
+            <div class="pt-2 flex items-center gap-3.5">
+              <a href="#new-arrivals" class="bg-[#FAF6EC] text-[#0A0A0A] hover:bg-royalGold transition-all duration-300 rounded-md px-7 py-3.5 text-xs font-semibold uppercase tracking-wider shadow-xl flex items-center justify-center min-h-[44px]">
                 Explore Collections
               </a>
-              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20jewellery%20collections%20at%20Standard%20Gold%20Payyavoor." target="_blank" rel="noopener noreferrer" class="bg-[#14120E]/80 backdrop-blur-md border border-royalGold text-lightGold hover:bg-royalGold/20 transition-all duration-300 rounded-md px-6 py-3.5 sm:py-3 text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 min-h-[44px] shadow-lg">
+              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20jewellery%20collections%20at%20Standard%20Gold%20Payyavoor." target="_blank" rel="noopener noreferrer" class="bg-[#14120E]/80 backdrop-blur-md border border-royalGold text-lightGold hover:bg-royalGold/20 transition-all duration-300 rounded-md px-6 py-3.5 text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 min-h-[44px] shadow-lg">
                 <span>Enquire on WhatsApp</span>
               </a>
             </div>
 
             <!-- Proof Line -->
-            <div class="pt-3 sm:pt-4 text-xs text-[#EDE8DC]/90 font-light flex flex-wrap items-center gap-2 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+            <div class="pt-2 text-xs text-[#EDE8DC]/80 font-light flex items-center gap-2">
               <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
               <span>Open Today until 7:30 PM</span>
               <span>•</span>
@@ -1196,6 +1284,6 @@
   </div>
 
   <!-- JavaScript (with cache buster) -->
-  <script src="assets/js/main.js?v=20261120i"></script>
+  <script src="assets/js/main.js?v=20261120j"></script>
 </body>
 </html>

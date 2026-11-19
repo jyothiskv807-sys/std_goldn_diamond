@@ -547,7 +547,8 @@ h1, h2, h3, h4, .font-serif {
   .animate-float-slow,
   .animate-float-delayed,
   .pulse-gold,
-  .pulse-ring-effect::before {
+  .pulse-ring-effect::before,
+  .preloader-shimmer {
     animation: none !important;
   }
   .hover-elevate:hover,
@@ -555,4 +556,23 @@ h1, h2, h3, h4, .font-serif {
   .luxury-card-hover:hover {
     transform: none !important;
   }
+}
+
+/* ==================== LUXURY BRAND PRELOADER ==================== */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.preloader-shimmer {
+  background: linear-gradient(90deg, #D4AF37 0%, #FFF5D0 30%, #D4AF37 60%, #F1D77A 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldShimmer 3s ease-in-out infinite;
 }

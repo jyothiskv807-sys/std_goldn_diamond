@@ -4,6 +4,51 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // ==================== 0. LUXURY BRAND PRELOADER ====================
+  const brandPreloader = document.getElementById('brandPreloader');
+  const preloaderContent = document.getElementById('preloaderContent');
+
+  if (brandPreloader && preloaderContent) {
+    document.body.classList.add('overflow-hidden');
+
+    // Trigger smooth fade in & scale up
+    requestAnimationFrame(() => {
+      preloaderContent.classList.remove('scale-95', 'opacity-0');
+      preloaderContent.classList.add('scale-100', 'opacity-100');
+    });
+
+    const startTime = Date.now();
+    const minDuration = 1200; // minimum 1.2s display
+    const maxTimeout = 2500;  // hard fallback 2.5s
+
+    let dismissed = false;
+    function dismissPreloader() {
+      if (dismissed) return;
+      dismissed = true;
+      brandPreloader.classList.add('opacity-0', 'pointer-events-none');
+      brandPreloader.setAttribute('aria-hidden', 'true');
+      setTimeout(() => {
+        brandPreloader.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }, 500);
+    }
+
+    if (document.readyState === 'complete') {
+      const elapsed = Date.now() - startTime;
+      const remaining = Math.max(0, minDuration - elapsed);
+      setTimeout(dismissPreloader, remaining);
+    } else {
+      window.addEventListener('load', () => {
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, minDuration - elapsed);
+        setTimeout(dismissPreloader, remaining);
+      });
+    }
+
+    // Safety fallback
+    setTimeout(dismissPreloader, maxTimeout);
+  }
+
   // ==================== 1. MOBILE DRAWER MENU ====================
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
@@ -306,6 +351,31 @@ document.addEventListener('DOMContentLoaded', () => {
           btn.innerHTML = originalText;
         }, 2200);
       });
+    });
+  });
+
+  // ==================== 7. BILINGUAL MALAYALAM TOGGLE ====================
+  const langToggleBtns = document.querySelectorAll('.lang-toggle-btn');
+  const mlElements = document.querySelectorAll('.lang-ml');
+  let isMalayalam = false;
+
+  function updateLanguage(mlActive) {
+    isMalayalam = mlActive;
+    mlElements.forEach(el => {
+      el.classList.toggle('hidden', !isMalayalam);
+    });
+    langToggleBtns.forEach(btn => {
+      btn.innerHTML = isMalayalam ? '🌐 EN' : '🌐 മലയാളം';
+      btn.setAttribute('aria-label', isMalayalam ? 'Switch to English' : 'Switch to Malayalam');
+      btn.setAttribute('title', isMalayalam ? 'Switch to English' : 'മലയാളത്തിലേക്ക് മാറ്റുക');
+    });
+  }
+
+  langToggleBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      updateLanguage(!isMalayalam);
     });
   });
 
