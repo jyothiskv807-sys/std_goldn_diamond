@@ -183,7 +183,7 @@ TYPE HIERARCHY:
    - Layout:
      * Left: Brand logo emblem + "Standard" typography with "Gold & Diamonds • Payyavoor" sub-label
      * Center: Desktop navigation menu (Collections, Bridal Suite, Our Story, Why SFJ, Visit Showroom)
-     * Right: Malayalam accent language toggle pill ("🌐 മലയാളം" <-> "EN") + Primary WhatsApp CTA button
+     * Right: Primary WhatsApp CTA button
      * Mobile: Quick call button + Mobile hamburger drawer trigger
 
 2. MOBILE DRAWER MENU (#mobileMenuDrawer & #mobileMenuBackdrop)
@@ -196,8 +196,7 @@ TYPE HIERARCHY:
    - Desktop Alignment: Reduced gap with lg:pt-20 and lg:pt-5, eliminating flex-centering
      dead space so content sits ~23px cleanly under the fixed header.
    - Grid: 2-column editorial layout (7 cols left, 5 cols right):
-     * Left: 4.8★ Google Review badge, Cormorant Garamond main headline, toggleable Malayalam
-       subtitle, descriptive paragraph, twin CTAs ("Explore Collections" & "Chat on WhatsApp"),
+     * Left: 4.8★ Google Review badge, Cormorant Garamond main headline, descriptive paragraph, twin CTAs ("Explore Collections" & "Chat on WhatsApp"),
        micro showroom proof strip (Open today until 7:30 PM, Payyavoor Kannur, Direct line).
      * Right: Luxury artwork frame with floating slow-animation, rounded-2xl gold border,
        and in-frame "Bridal Signature Suite — Royal Malabar Collection" showroom tag.
@@ -276,13 +275,11 @@ TYPE HIERARCHY:
   3. Our Story (#about)
   4. Why SFJ (#why-us)
   5. Visit Showroom (#visit-us)
-- Language Toggle: "🌐 മലയാളം" (switches to "EN")
 - Header Button: "WhatsApp Us" (URL: https://wa.me/919447251916?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20jewellery%20collections.)
 
 [HERO SECTION]
 - Trust Badge: "★ 4.8 ★ • 90 Google Reviews • Payyavoor, Kannur"
 - Main Headline: "Timeless Elegance, Crafted for You."
-- Malayalam Subtitle (Toggleable): "തനിമയാർന്ന സ്വർണ്ണ, വജ്രാഭരണങ്ങളുടെ വിസ്മയ ശേഖരം • പയ്യാവൂർ, കണ്ണൂർ"
 - Subtext: "Gold • Diamond • Bridal Jewellery in Payyavoor, Kannur. Celebrating Kannur’s finest traditions with master 916 gold artistry, certified solitaire diamonds, and bespoke bridal trousseau sets."
 - Primary CTA Button: "Explore Collections" (href="#collections")
 - Secondary CTA Button: "Chat on WhatsApp" (URL: https://wa.me/919447251916...)
@@ -401,16 +398,11 @@ TYPE HIERARCHY:
    - `.reveal-on-scroll` triggers when elements enter 12% of the viewport, applying
      smooth CSS transform (`translateY(0)` from `translateY(24px)`) and opacity fade-in.
 
-5. Malayalam Language Toggle:
-   - Tapping "🌐 മലയാളം" in the header dynamically toggles visibility of `.lang-ml`
-     elements across the page, providing bilingual Malayalam accents for native Kerala
-     visitors, and toggles the button label to "EN".
-
-6. One-Click Phone Number Copy:
+5. One-Click Phone Number Copy:
    - Tapping the "Copy" button next to 094472 51916 invokes the Clipboard API, copying
      the plain number and displaying a momentary "Copied +91 94472 51916!" confirmation.
 
-7. Micro Hover Animations:
+6. Micro Hover Animations:
    - `.sheen-btn`: Shimmering light reflection sweeps across gold buttons on hover.
    - `.hover-elevate`: Luxury cards lift by -4px to -6px with gold drop-shadows.
    - `.pulse-ring-effect`: Floating WhatsApp action button radiates continuous pulsating gold rings.

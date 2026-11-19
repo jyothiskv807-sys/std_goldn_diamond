@@ -233,27 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ==================== 6. BILINGUAL MALAYALAM TOGGLE ====================
-  const langToggleBtn = document.getElementById('langToggleBtn');
-  const mlElements = document.querySelectorAll('.lang-ml');
-  let isMalayalamActive = false;
-
-  if (langToggleBtn) {
-    langToggleBtn.addEventListener('click', () => {
-      isMalayalamActive = !isMalayalamActive;
-      mlElements.forEach(el => {
-        if (isMalayalamActive) {
-          el.classList.remove('hidden');
-        } else {
-          el.classList.add('hidden');
-        }
-      });
-      langToggleBtn.innerHTML = isMalayalamActive ? '<span class="text-[11px]">🌐</span><span>EN</span>' : '<span class="text-[11px]">🌐</span><span>മലയാളം</span>';
-      langToggleBtn.setAttribute('title', isMalayalamActive ? 'Switch to English' : 'മലയാളത്തിലേക്ക് മാറ്റുക');
-    });
-  }
-
-  // ==================== 7. ONE-CLICK PHONE NUMBER COPY ====================
+  // ==================== 6. ONE-CLICK PHONE NUMBER COPY ====================
   const copyPhoneBtns = document.querySelectorAll('.copy-phone-btn');
   copyPhoneBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
