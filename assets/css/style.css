@@ -368,6 +368,160 @@ h1, h2, h3, h4, .font-serif {
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
 }
 
+/* ==================== REDESIGNED LUXURY STOREFRONT STYLES ==================== */
+
+/* Header Search Input & Dropdown */
+.search-input-pill {
+  background: #14120E;
+  border: 1px solid #3A3320;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.search-input-pill:focus-within {
+  border-color: #D4AF37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+  background: #1A1713;
+}
+
+#searchDropdown {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Category Nav Active Underline */
+.category-nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.category-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #D4AF37;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.category-nav-link:hover::after,
+.category-nav-link.active::after {
+  width: 100%;
+}
+
+/* Promo Banner Walnut Gradient & Floating Cutout */
+.promo-walnut-banner {
+  background: linear-gradient(135deg, #2B1C10 0%, #5A3A22 55%, #3A2616 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 20px 45px rgba(10, 10, 10, 0.5);
+}
+
+.floating-macro-ring {
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.65));
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.promo-walnut-banner:hover .floating-macro-ring {
+  transform: translateY(-8px) scale(1.04) rotate(-2deg);
+}
+
+/* Dark Studio Product Card */
+.dark-studio-card {
+  background: #0D0D0D;
+  border: 1px solid rgba(58, 51, 32, 0.6);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.dark-studio-card:hover {
+  transform: translateY(-6px);
+  border-color: #D4AF37;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+.dark-studio-card img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dark-studio-card:hover img {
+  transform: scale(1.06);
+}
+
+/* Category Clean Tile */
+.category-clean-tile {
+  background: #FFFFFF;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.category-clean-tile:hover {
+  transform: translateY(-5px);
+  border-color: #D4AF37;
+  box-shadow: 0 12px 28px -8px rgba(166, 124, 0, 0.15);
+}
+.category-clean-tile img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.category-clean-tile:hover img {
+  transform: scale(1.08);
+}
+
+/* Curated Category Filter Tabs */
+.curated-tab-btn {
+  position: relative;
+  transition: all 0.3s ease;
+  color: #5A3A22;
+}
+.curated-tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #A67C00;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.curated-tab-btn.active {
+  color: #1C1C1C;
+  font-weight: 600;
+}
+.curated-tab-btn.active::after {
+  width: 100%;
+  left: 0;
+  background: #D4AF37;
+  height: 3px;
+}
+
+/* Portrait Lifestyle Editorial Card */
+.portrait-lifestyle-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.portrait-lifestyle-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.35);
+}
+.portrait-lifestyle-card img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.portrait-lifestyle-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Pre-Footer Warm Gold Gradient Card */
+.prefooter-gradient-card {
+  background: linear-gradient(135deg, #FAF6EC 0%, #F5EBD6 50%, #EAD7B0 100%);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* Monogram Watermark */
+.monogram-watermark {
+  position: absolute;
+  right: -2%;
+  bottom: -5%;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(140px, 20vw, 280px);
+  font-weight: 700;
+  line-height: 1;
+  color: #14120E;
+  opacity: 0.35;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.05em;
+}
+
 /* Respect user motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .animate-float-slow,
