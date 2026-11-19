@@ -12,34 +12,34 @@
   --divider-gold: #3A3320;
 }
 
-/* Base typography & Root Scaling (Mobile-Optimized for iOS & Android) */
+/* Base typography & Root Scaling (Optimized for Readability across Mobile & Desktop) */
 html {
-  font-size: 15px;
+  font-size: 16px;
   max-width: 100%;
   overflow-x: clip;
 }
 
 @media (min-width: 400px) {
   html {
-    font-size: 16px;
+    font-size: 16.5px;
   }
 }
 
 @media (min-width: 640px) {
   html {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
 
 @media (min-width: 1024px) {
   html {
-    font-size: 18.5px;
+    font-size: 20px;
   }
 }
 
 @media (min-width: 1440px) {
   html {
-    font-size: 19.5px;
+    font-size: 21.5px;
   }
 }
 
@@ -431,53 +431,40 @@ h1, h2, h3, h4, .font-serif {
 
 /* Promo Banner Walnut Gradient & Floating Cutout */
 .promo-walnut-banner {
-  background: linear-gradient(135deg, #2B1C10 0%, #5A3A22 55%, #3A2616 100%);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  box-shadow: 0 20px 45px rgba(10, 10, 10, 0.5);
+  background: linear-gradient(135deg, #1C120B 0%, #3D2513 55%, #1C120B 100%) !important;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 20px 45px rgba(10, 10, 10, 0.6);
+  color: #FAF6EC;
 }
 
 .floating-macro-ring {
-  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.65));
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.75));
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .promo-walnut-banner:hover .floating-macro-ring {
   transform: translateY(-8px) scale(1.04) rotate(-2deg);
 }
 
-/* Dark Studio Product Card */
-.dark-studio-card {
-  background: #0D0D0D;
-  border: 1px solid rgba(58, 51, 32, 0.6);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
-}
-.dark-studio-card:hover {
-  transform: translateY(-6px);
-  border-color: #D4AF37;
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(212, 175, 55, 0.2);
-}
-.dark-studio-card img {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.dark-studio-card:hover img {
-  transform: scale(1.06);
-}
-
 /* Category Clean Tile */
 .category-clean-tile {
   background: #FFFFFF;
-  border: 1px solid rgba(212, 175, 55, 0.22);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .category-clean-tile:hover {
-  transform: translateY(-5px);
-  border-color: #D4AF37;
-  box-shadow: 0 12px 28px -8px rgba(166, 124, 0, 0.15);
+  transform: translateY(-6px);
+  border-color: #A67C00;
+  box-shadow: 0 16px 32px -8px rgba(90, 58, 34, 0.2);
 }
 .category-clean-tile img {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .category-clean-tile:hover img {
   transform: scale(1.08);
+}
+.category-clean-tile:hover h4 {
+  color: #5A3A22 !important;
 }
 
 /* Curated Category Filter Tabs */

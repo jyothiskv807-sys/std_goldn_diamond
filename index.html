@@ -59,8 +59,8 @@
     }
   </script>
 
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Custom Styles (with cache buster) -->
+  <link rel="stylesheet" href="assets/css/style.css?v=20261120b">
 
   <!-- JSON-LD LocalBusiness Schema -->
   <script type="application/ld+json">
@@ -320,8 +320,8 @@
     <!-- ==================== 2. RESPONSIVE HERO SECTION ==================== -->
     <section id="hero" class="relative w-full overflow-hidden bg-[#0A0A0A]">
       
-      <!-- DESKTOP HERO VIEW (lg:flex, 100% UNCHANGED) -->
-      <div class="hidden lg:flex relative w-full min-h-[540px] lg:min-h-[620px] items-center">
+      <!-- DESKTOP HERO VIEW (Optimized spacing - content pushed upwards directly under header) -->
+      <div class="hidden lg:flex relative w-full min-h-[460px] lg:min-h-[490px] items-start">
         <!-- Background Image with Dark Vignette Gradient -->
         <div class="absolute inset-0 z-0">
           <img 
@@ -334,8 +334,8 @@
         </div>
 
         <!-- Desktop Content Overlay -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 w-full">
-          <div class="max-w-xl lg:max-w-2xl space-y-5 reveal-on-scroll">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 pb-8 lg:pt-6 lg:pb-10 w-full">
+          <div class="max-w-xl lg:max-w-2xl space-y-4 lg:space-y-5 reveal-on-scroll">
             
             <!-- Micro Trust Pill -->
             <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#14120E]/90 border border-royalGold/40 text-[11px] sm:text-xs font-medium text-[#F1D77A] shadow-lg backdrop-blur-md">
@@ -446,30 +446,30 @@
 
 
     <!-- ==================== 3. ROUNDED HERITAGE & PROMO BANNER ==================== -->
-    <section id="story-banner" class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 mt-10 sm:mt-12 lg:mt-16 reveal-on-scroll">
-      <div class="promo-walnut-banner rounded-2xl p-6 sm:p-8 lg:p-12 relative overflow-hidden lg:overflow-visible">
+    <section id="story-banner" class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 mt-6 sm:mt-8 lg:mt-8 reveal-on-scroll">
+      <div class="promo-walnut-banner rounded-2xl p-6 sm:p-8 lg:p-12 relative overflow-hidden lg:overflow-visible shadow-2xl border border-royalGold/40 text-[#FAF6EC]" style="background: linear-gradient(135deg, #1C120B 0%, #3D2513 55%, #1C120B 100%);">
         
         <div class="flex flex-col lg:grid lg:grid-cols-12 gap-6 lg:gap-8 items-center text-center lg:text-left">
           
           <!-- Left Content (60%) -->
-          <div class="lg:col-span-7 space-y-3.5 sm:space-y-4 text-softWhite z-10 w-full">
+          <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-[#FAF6EC] z-10 w-full">
             
-            <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-lightGold">
+            <div class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#F1D77A]">
               <span>✦</span>
               <span>STANDARD GOLD &amp; DIAMONDS • EST. PAYYAVOOR</span>
             </div>
 
-            <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-softWhite leading-snug">
+            <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#FAF6EC] leading-snug">
               Where Timeless Tradition Meets Modern Elegance
             </h2>
 
-            <p class="text-sm sm:text-base text-[#EDE8DC]/90 font-light leading-relaxed">
+            <p class="text-sm sm:text-base lg:text-lg text-[#EDE8DC] font-normal leading-relaxed">
               Born in the heart of Payyavoor, SFJ combines unyielding 916 hallmark purity, transparent karatmeter testing, and warm Malabar hospitality for generations of Kannur families.
             </p>
 
             <div class="pt-2">
-              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20would%20like%20to%20book%20a%20Bridal%20Consultation%20at%20Standard%20Gold%20%26%20Diamonds%20Payyavoor." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-lightGold hover:text-white transition group min-h-[44px]">
-                <span class="underline underline-offset-4 decoration-royalGold">Book Bridal Consultation</span>
+              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20would%20like%20to%20book%20a%20Bridal%20Consultation%20at%20Standard%20Gold%20%26%20Diamonds%20Payyavoor." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#FAF6EC] text-[#1C1C1C] hover:bg-royalGold hover:text-[#0A0A0A] font-bold text-xs sm:text-sm uppercase tracking-wider px-6 py-3.5 rounded-full shadow-lg transition-all min-h-[44px]">
+                <span>Book Bridal Consultation</span>
                 <span class="group-hover:translate-x-1 transition-transform">→</span>
               </a>
             </div>
@@ -478,7 +478,7 @@
 
           <!-- Right Visual (40% — Solitaire Ring) -->
           <div class="lg:col-span-5 flex justify-center lg:justify-end relative mt-2 lg:mt-0">
-            <div class="relative w-44 sm:w-56 lg:w-80 aspect-square mx-auto lg:mx-0">
+            <div class="relative w-48 sm:w-60 lg:w-84 aspect-square mx-auto lg:mx-0">
               <img 
                 src="assets/images/floating-ring-macro.jpg" 
                 alt="Intertwined 22K Gold &amp; Certified Diamond Solitaire Ring - Standard Gold Payyavoor" 
@@ -494,43 +494,43 @@
     </section>
 
 
-    <!-- ==================== 4. NEW ARRIVALS (DARK-STUDIO PRODUCT SHOWCASE) ==================== -->
-    <section id="new-arrivals" class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-12 lg:py-20">
+    <!-- ==================== 4. NEW ARRIVALS (SIGNATURE BOUTIQUE SHOWCASE) ==================== -->
+    <section id="new-arrivals" class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-8 lg:py-12">
       
       <!-- Header Row -->
-      <div class="flex items-center justify-between gap-2 mb-6 sm:mb-10 pb-4 border-b border-[#D4AF37]/20 reveal-on-scroll">
+      <div class="flex items-center justify-between gap-2 mb-6 sm:mb-8 pb-4 border-b border-[#D4AF37]/25 reveal-on-scroll">
         <div>
-          <span class="text-[11px] sm:text-xs font-semibold tracking-widest text-[#5A3A22] uppercase">Boutique Selection</span>
+          <span class="text-xs sm:text-sm font-bold tracking-widest text-[#5A3A22] uppercase">Boutique Selection</span>
           <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1C] mt-0.5 sm:mt-1">
             Signature Arrivals
           </h2>
         </div>
-        <a href="https://wa.me/919447251916?text=Hi%2C%20I%27d%20like%20to%20see%20your%20latest%20jewellery%20arrivals%20at%20Payyavoor." target="_blank" rel="noopener noreferrer" class="border border-[#1C1C1C]/40 hover:border-royalGold text-[#1C1C1C] hover:bg-[#0A0A0A] hover:text-lightGold transition-all duration-300 rounded-md px-3.5 sm:px-5 py-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider flex-shrink-0 min-h-[38px] flex items-center">
+        <a href="https://wa.me/919447251916?text=Hi%2C%20I%27d%20like%20to%20see%20your%20latest%20jewellery%20arrivals%20at%20Payyavoor." target="_blank" rel="noopener noreferrer" class="border border-[#1C1C1C]/60 hover:border-royalGold text-[#1C1C1C] hover:bg-[#0A0A0A] hover:text-[#FAF6EC] transition-all duration-300 rounded-md px-4 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold uppercase tracking-wider flex-shrink-0 min-h-[42px] flex items-center shadow-sm">
           Enquire on WhatsApp
         </a>
       </div>
 
       <!-- 4-Column Responsive Grid (2-col on mobile, 4-col on desktop) -->
-      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
         
         <!-- Product 1 -->
-        <article class="dark-studio-card rounded-xl overflow-hidden reveal-on-scroll group">
-          <div class="relative aspect-square overflow-hidden bg-[#0D0D0D]">
-            <img src="assets/images/gold-jewellery.jpg" alt="Kerala Heritage Kasumala - 916 Pure Gold" class="w-full h-full object-cover" loading="lazy">
-            <div class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-[#0A0A0A]/90 text-lightGold text-[9px] sm:text-[10px] font-semibold tracking-wider px-2 py-0.5 rounded border border-royalGold/30 uppercase">
+        <article class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl border border-[#D4AF37]/35 hover:border-royalGold transition-all duration-300 reveal-on-scroll group">
+          <div class="relative aspect-square overflow-hidden bg-[#FAF6EC]">
+            <img src="assets/images/gold-jewellery.jpg" alt="Kerala Heritage Kasumala - 916 Pure Gold" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-[#0A0A0A] text-[#F1D77A] text-[10px] sm:text-xs font-bold tracking-wider px-2.5 py-1 rounded border border-royalGold/50 uppercase shadow-md">
               916 Hallmark
             </div>
           </div>
-          <div class="p-3 sm:p-5 space-y-1 sm:space-y-2">
-            <h3 class="font-serif text-sm sm:text-lg font-bold text-softWhite group-hover:text-lightGold transition-colors leading-snug line-clamp-1">
+          <div class="p-4 sm:p-5 space-y-2">
+            <h3 class="font-serif text-base sm:text-xl lg:text-2xl font-bold text-[#1C1C1C] group-hover:text-[#A67C00] transition-colors leading-snug line-clamp-1">
               Kerala Heritage Kasumala
             </h3>
-            <p class="text-[11px] sm:text-xs text-[#EDE8DC]/70 font-light line-clamp-2">
+            <p class="text-xs sm:text-sm lg:text-[14px] text-[#3A3320] font-normal leading-relaxed line-clamp-2">
               916 Pure Gold • Traditional Coin Necklace with Lakshmi Motif
             </p>
-            <div class="pt-2 border-t border-[#3A3320]/60 flex items-center justify-between">
-              <span class="text-[10px] sm:text-[11px] text-royalGold font-medium">Bespoke</span>
-              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20am%20enquiring%20about%20the%20Kerala%20Heritage%20Kasumala%20necklace%20at%20Standard%20Gold%20Payyavoor." target="_blank" rel="noopener noreferrer" class="text-[11px] sm:text-xs text-lightGold hover:underline font-semibold py-1">
+            <div class="pt-3 border-t border-[#D4AF37]/30 flex items-center justify-between">
+              <span class="text-xs sm:text-sm text-[#5A3A22] font-semibold tracking-wide uppercase">Bespoke</span>
+              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20am%20enquiring%20about%20the%20Kerala%20Heritage%20Kasumala%20necklace%20at%20Standard%20Gold%20Payyavoor." target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm text-[#A67C00] hover:text-[#1C1C1C] hover:underline font-bold py-1">
                 Enquire →
               </a>
             </div>
@@ -538,23 +538,23 @@
         </article>
 
         <!-- Product 2 -->
-        <article class="dark-studio-card rounded-xl overflow-hidden reveal-on-scroll group" style="transition-delay: 80ms;">
-          <div class="relative aspect-square overflow-hidden bg-[#0D0D0D]">
-            <img src="assets/images/solitaire-ring.jpg" alt="Solitaire Cushion Diamond Ring - IGI Certified" class="w-full h-full object-cover" loading="lazy">
-            <div class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-[#0A0A0A]/90 text-lightGold text-[9px] sm:text-[10px] font-semibold tracking-wider px-2 py-0.5 rounded border border-royalGold/30 uppercase">
+        <article class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl border border-[#D4AF37]/35 hover:border-royalGold transition-all duration-300 reveal-on-scroll group" style="transition-delay: 80ms;">
+          <div class="relative aspect-square overflow-hidden bg-[#FAF6EC]">
+            <img src="assets/images/solitaire-ring.jpg" alt="Solitaire Cushion Diamond Ring - IGI Certified" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-[#0A0A0A] text-[#F1D77A] text-[10px] sm:text-xs font-bold tracking-wider px-2.5 py-1 rounded border border-royalGold/50 uppercase shadow-md">
               Certified Diamond
             </div>
           </div>
-          <div class="p-3 sm:p-5 space-y-1 sm:space-y-2">
-            <h3 class="font-serif text-sm sm:text-lg font-bold text-softWhite group-hover:text-lightGold transition-colors leading-snug line-clamp-1">
+          <div class="p-4 sm:p-5 space-y-2">
+            <h3 class="font-serif text-base sm:text-xl lg:text-2xl font-bold text-[#1C1C1C] group-hover:text-[#A67C00] transition-colors leading-snug line-clamp-1">
               Solitaire Cushion Ring
             </h3>
-            <p class="text-[11px] sm:text-xs text-[#EDE8DC]/70 font-light line-clamp-2">
+            <p class="text-xs sm:text-sm lg:text-[14px] text-[#3A3320] font-normal leading-relaxed line-clamp-2">
               IGI Certified • Brilliant Halo Setting in 18K Yellow Gold
             </p>
-            <div class="pt-2 border-t border-[#3A3320]/60 flex items-center justify-between">
-              <span class="text-[10px] sm:text-[11px] text-royalGold font-medium">Custom Carat</span>
-              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20am%20enquiring%20about%20the%20Solitaire%20Cushion%20Diamond%20Ring%20at%20Standard%20Gold%20Payyavoor." target="_blank" rel="noopener noreferrer" class="text-[11px] sm:text-xs text-lightGold hover:underline font-semibold py-1">
+            <div class="pt-3 border-t border-[#D4AF37]/30 flex items-center justify-between">
+              <span class="text-xs sm:text-sm text-[#5A3A22] font-semibold tracking-wide uppercase">Custom Carat</span>
+              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20am%20enquiring%20about%20the%20Solitaire%20Cushion%20Diamond%20Ring%20at%20Standard%20Gold%20Payyavoor." target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm text-[#A67C00] hover:text-[#1C1C1C] hover:underline font-bold py-1">
                 Enquire →
               </a>
             </div>
@@ -562,23 +562,23 @@
         </article>
 
         <!-- Product 3 -->
-        <article class="dark-studio-card rounded-xl overflow-hidden reveal-on-scroll group" style="transition-delay: 160ms;">
-          <div class="relative aspect-square overflow-hidden bg-[#0D0D0D]">
-            <img src="assets/images/temple-choker.jpg" alt="Malabar Antique Temple Choker - 916 Hallmarked" class="w-full h-full object-cover" loading="lazy">
-            <div class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-[#0A0A0A]/90 text-lightGold text-[9px] sm:text-[10px] font-semibold tracking-wider px-2 py-0.5 rounded border border-royalGold/30 uppercase">
+        <article class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl border border-[#D4AF37]/35 hover:border-royalGold transition-all duration-300 reveal-on-scroll group" style="transition-delay: 160ms;">
+          <div class="relative aspect-square overflow-hidden bg-[#FAF6EC]">
+            <img src="assets/images/temple-choker.jpg" alt="Malabar Antique Temple Choker - 916 Hallmarked" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-[#0A0A0A] text-[#F1D77A] text-[10px] sm:text-xs font-bold tracking-wider px-2.5 py-1 rounded border border-royalGold/50 uppercase shadow-md">
               Antique Temple
             </div>
           </div>
-          <div class="p-3 sm:p-5 space-y-1 sm:space-y-2">
-            <h3 class="font-serif text-sm sm:text-lg font-bold text-softWhite group-hover:text-lightGold transition-colors leading-snug line-clamp-1">
+          <div class="p-4 sm:p-5 space-y-2">
+            <h3 class="font-serif text-base sm:text-xl lg:text-2xl font-bold text-[#1C1C1C] group-hover:text-[#A67C00] transition-colors leading-snug line-clamp-1">
               Malabar Temple Choker
             </h3>
-            <p class="text-[11px] sm:text-xs text-[#EDE8DC]/70 font-light line-clamp-2">
+            <p class="text-xs sm:text-sm lg:text-[14px] text-[#3A3320] font-normal leading-relaxed line-clamp-2">
               916 Hallmarked • Handcrafted Filigree &amp; Ruby Stones
             </p>
-            <div class="pt-2 border-t border-[#3A3320]/60 flex items-center justify-between">
-              <span class="text-[10px] sm:text-[11px] text-royalGold font-medium">Handcrafted</span>
-              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20am%20enquiring%20about%20the%20Malabar%20Antique%20Temple%20Choker%20at%20Standard%20Gold%20Payyavoor." target="_blank" rel="noopener noreferrer" class="text-[11px] sm:text-xs text-lightGold hover:underline font-semibold py-1">
+            <div class="pt-3 border-t border-[#D4AF37]/30 flex items-center justify-between">
+              <span class="text-xs sm:text-sm text-[#5A3A22] font-semibold tracking-wide uppercase">Handcrafted</span>
+              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20am%20enquiring%20about%20the%20Malabar%20Antique%20Temple%20Choker%20at%20Standard%20Gold%20Payyavoor." target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm text-[#A67C00] hover:text-[#1C1C1C] hover:underline font-bold py-1">
                 Enquire →
               </a>
             </div>
@@ -586,23 +586,23 @@
         </article>
 
         <!-- Product 4 -->
-        <article class="dark-studio-card rounded-xl overflow-hidden reveal-on-scroll group" style="transition-delay: 240ms;">
-          <div class="relative aspect-square overflow-hidden bg-[#0D0D0D]">
-            <img src="assets/images/mullamottu-mala.jpg" alt="Mullamottu Jasmine Mala - 916 Pure Gold" class="w-full h-full object-cover" loading="lazy">
-            <div class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-[#0A0A0A]/90 text-lightGold text-[9px] sm:text-[10px] font-semibold tracking-wider px-2 py-0.5 rounded border border-royalGold/30 uppercase">
+        <article class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl border border-[#D4AF37]/35 hover:border-royalGold transition-all duration-300 reveal-on-scroll group" style="transition-delay: 240ms;">
+          <div class="relative aspect-square overflow-hidden bg-[#FAF6EC]">
+            <img src="assets/images/mullamottu-mala.jpg" alt="Mullamottu Jasmine Mala - 916 Pure Gold" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-[#0A0A0A] text-[#F1D77A] text-[10px] sm:text-xs font-bold tracking-wider px-2.5 py-1 rounded border border-royalGold/50 uppercase shadow-md">
               Bridal Heritage
             </div>
           </div>
-          <div class="p-3 sm:p-5 space-y-1 sm:space-y-2">
-            <h3 class="font-serif text-sm sm:text-lg font-bold text-softWhite group-hover:text-lightGold transition-colors leading-snug line-clamp-1">
+          <div class="p-4 sm:p-5 space-y-2">
+            <h3 class="font-serif text-base sm:text-xl lg:text-2xl font-bold text-[#1C1C1C] group-hover:text-[#A67C00] transition-colors leading-snug line-clamp-1">
               Mullamottu Jasmine Mala
             </h3>
-            <p class="text-[11px] sm:text-xs text-[#EDE8DC]/70 font-light line-clamp-2">
+            <p class="text-xs sm:text-sm lg:text-[14px] text-[#3A3320] font-normal leading-relaxed line-clamp-2">
               916 Pure Gold • Classic Kerala Jasmine Bud Bridal Layering
             </p>
-            <div class="pt-2 border-t border-[#3A3320]/60 flex items-center justify-between">
-              <span class="text-[10px] sm:text-[11px] text-royalGold font-medium">Pure 916</span>
-              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20am%20enquiring%20about%20the%20Mullamottu%20Jasmine%20Mala%20necklace%20at%20Standard%20Gold%20Payyavoor." target="_blank" rel="noopener noreferrer" class="text-[11px] sm:text-xs text-lightGold hover:underline font-semibold py-1">
+            <div class="pt-3 border-t border-[#D4AF37]/30 flex items-center justify-between">
+              <span class="text-xs sm:text-sm text-[#5A3A22] font-semibold tracking-wide uppercase">Pure 916</span>
+              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20am%20enquiring%20about%20the%20Mullamottu%20Jasmine%20Mala%20necklace%20at%20Standard%20Gold%20Payyavoor." target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm text-[#A67C00] hover:text-[#1C1C1C] hover:underline font-bold py-1">
                 Enquire →
               </a>
             </div>
@@ -615,71 +615,71 @@
 
 
     <!-- ==================== 5. SHOP BY CATEGORY (CLEAN TILE GRID) ==================== -->
-    <section id="categories" class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <section id="categories" class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-8 lg:py-12">
       
       <div class="mb-6 sm:mb-8 reveal-on-scroll">
-        <span class="text-[11px] sm:text-xs font-semibold tracking-widest text-[#5A3A22] uppercase">Explore By Category</span>
-        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-[#1C1C1C] mt-0.5 sm:mt-1">
+        <span class="text-xs sm:text-sm font-bold tracking-widest text-[#5A3A22] uppercase">Explore By Category</span>
+        <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1C1C1C] mt-0.5 sm:mt-1">
           Shop by Category
         </h2>
       </div>
 
       <!-- 5 Clean Category Tiles (2-col mobile with 5th spanning full, 5-col desktop) -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-5">
         
         <!-- Cat 1 -->
-        <a href="#curated" data-switch-tab="gold" class="category-clean-tile rounded-xl p-3 sm:p-4 flex flex-col items-center group text-center reveal-on-scroll min-h-[44px]">
-          <div class="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-2.5 sm:mb-3 bg-[#FAF6EC] border border-[#D4AF37]/30 flex items-center justify-center p-1.5">
+        <a href="#curated" data-switch-tab="gold" class="category-clean-tile rounded-xl p-4 sm:p-5 lg:p-6 flex flex-col items-center group text-center reveal-on-scroll min-h-[44px]">
+          <div class="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-3 sm:mb-4 bg-[#FAF6EC] border border-[#D4AF37]/40 shadow-sm flex items-center justify-center p-2">
             <img src="assets/images/bangles.jpg" alt="Gold Bangles" class="w-full h-full object-cover rounded-full">
           </div>
-          <h4 class="font-serif text-sm sm:text-lg font-bold text-[#1C1C1C] group-hover:text-deepGold transition-colors">
+          <h4 class="font-serif text-base sm:text-xl lg:text-2xl font-bold text-[#1C1C1C] group-hover:text-[#5A3A22] transition-colors leading-snug">
             Gold Bangles
           </h4>
-          <span class="text-[10px] sm:text-[11px] text-[#5A3A22] font-medium mt-0.5">22K Handcrafted</span>
+          <span class="text-xs sm:text-sm text-[#5A3A22] font-semibold mt-1">22K Handcrafted</span>
         </a>
 
         <!-- Cat 2 -->
-        <a href="#curated" data-switch-tab="diamonds" class="category-clean-tile rounded-xl p-3 sm:p-4 flex flex-col items-center group text-center reveal-on-scroll min-h-[44px]" style="transition-delay: 60ms;">
-          <div class="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-2.5 sm:mb-3 bg-[#FAF6EC] border border-[#D4AF37]/30 flex items-center justify-center p-1.5">
+        <a href="#curated" data-switch-tab="diamonds" class="category-clean-tile rounded-xl p-4 sm:p-5 lg:p-6 flex flex-col items-center group text-center reveal-on-scroll min-h-[44px]" style="transition-delay: 60ms;">
+          <div class="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-3 sm:mb-4 bg-[#FAF6EC] border border-[#D4AF37]/40 shadow-sm flex items-center justify-center p-2">
             <img src="assets/images/solitaire-ring.jpg" alt="Diamond Rings" class="w-full h-full object-cover rounded-full">
           </div>
-          <h4 class="font-serif text-sm sm:text-lg font-bold text-[#1C1C1C] group-hover:text-deepGold transition-colors">
+          <h4 class="font-serif text-base sm:text-xl lg:text-2xl font-bold text-[#1C1C1C] group-hover:text-[#5A3A22] transition-colors leading-snug">
             Diamond Rings
           </h4>
-          <span class="text-[10px] sm:text-[11px] text-[#5A3A22] font-medium mt-0.5">Solitaires &amp; Bands</span>
+          <span class="text-xs sm:text-sm text-[#5A3A22] font-semibold mt-1">Solitaires &amp; Bands</span>
         </a>
 
         <!-- Cat 3 -->
-        <a href="#curated" data-switch-tab="bridal" class="category-clean-tile rounded-xl p-3 sm:p-4 flex flex-col items-center group text-center reveal-on-scroll min-h-[44px]" style="transition-delay: 120ms;">
-          <div class="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-2.5 sm:mb-3 bg-[#FAF6EC] border border-[#D4AF37]/30 flex items-center justify-center p-1.5">
+        <a href="#curated" data-switch-tab="bridal" class="category-clean-tile rounded-xl p-4 sm:p-5 lg:p-6 flex flex-col items-center group text-center reveal-on-scroll min-h-[44px]" style="transition-delay: 120ms;">
+          <div class="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-3 sm:mb-4 bg-[#FAF6EC] border border-[#D4AF37]/40 shadow-sm flex items-center justify-center p-2">
             <img src="assets/images/temple-choker.jpg" alt="Bridal Necklaces" class="w-full h-full object-cover rounded-full">
           </div>
-          <h4 class="font-serif text-sm sm:text-lg font-bold text-[#1C1C1C] group-hover:text-deepGold transition-colors">
+          <h4 class="font-serif text-base sm:text-xl lg:text-2xl font-bold text-[#1C1C1C] group-hover:text-[#5A3A22] transition-colors leading-snug">
             Bridal Necklaces
           </h4>
-          <span class="text-[10px] sm:text-[11px] text-[#5A3A22] font-medium mt-0.5">Grand Wedding Chokers</span>
+          <span class="text-xs sm:text-sm text-[#5A3A22] font-semibold mt-1">Grand Wedding Chokers</span>
         </a>
 
         <!-- Cat 4 -->
-        <a href="#curated" data-switch-tab="gold" class="category-clean-tile rounded-xl p-3 sm:p-4 flex flex-col items-center group text-center reveal-on-scroll min-h-[44px]" style="transition-delay: 180ms;">
-          <div class="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-2.5 sm:mb-3 bg-[#FAF6EC] border border-[#D4AF37]/30 flex items-center justify-center p-1.5">
+        <a href="#curated" data-switch-tab="gold" class="category-clean-tile rounded-xl p-4 sm:p-5 lg:p-6 flex flex-col items-center group text-center reveal-on-scroll min-h-[44px]" style="transition-delay: 180ms;">
+          <div class="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-3 sm:mb-4 bg-[#FAF6EC] border border-[#D4AF37]/40 shadow-sm flex items-center justify-center p-2">
             <img src="assets/images/gold-jhumkas.jpg" alt="Jhumkas &amp; Earrings" class="w-full h-full object-cover rounded-full">
           </div>
-          <h4 class="font-serif text-sm sm:text-lg font-bold text-[#1C1C1C] group-hover:text-deepGold transition-colors">
+          <h4 class="font-serif text-base sm:text-xl lg:text-2xl font-bold text-[#1C1C1C] group-hover:text-[#5A3A22] transition-colors leading-snug">
             Jhumkas &amp; Drops
           </h4>
-          <span class="text-[10px] sm:text-[11px] text-[#5A3A22] font-medium mt-0.5">Traditional Filigree</span>
+          <span class="text-xs sm:text-sm text-[#5A3A22] font-semibold mt-1">Traditional Filigree</span>
         </a>
 
         <!-- Cat 5 (Spans 2 cols on mobile to balance grid) -->
-        <a href="#curated" data-switch-tab="diamonds" class="category-clean-tile rounded-xl p-3 sm:p-4 flex flex-col items-center group text-center reveal-on-scroll col-span-2 sm:col-span-1 min-h-[44px]" style="transition-delay: 240ms;">
-          <div class="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-2.5 sm:mb-3 bg-[#FAF6EC] border border-[#D4AF37]/30 flex items-center justify-center p-1.5">
+        <a href="#curated" data-switch-tab="diamonds" class="category-clean-tile rounded-xl p-4 sm:p-5 lg:p-6 flex flex-col items-center group text-center reveal-on-scroll col-span-2 sm:col-span-1 min-h-[44px]" style="transition-delay: 240ms;">
+          <div class="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden mb-3 sm:mb-4 bg-[#FAF6EC] border border-[#D4AF37]/40 shadow-sm flex items-center justify-center p-2">
             <img src="assets/images/diamond-pendant.jpg" alt="Pendants &amp; Chains" class="w-full h-full object-cover rounded-full">
           </div>
-          <h4 class="font-serif text-sm sm:text-lg font-bold text-[#1C1C1C] group-hover:text-deepGold transition-colors">
+          <h4 class="font-serif text-base sm:text-xl lg:text-2xl font-bold text-[#1C1C1C] group-hover:text-[#5A3A22] transition-colors leading-snug">
             Pendants &amp; Chains
           </h4>
-          <span class="text-[10px] sm:text-[11px] text-[#5A3A22] font-medium mt-0.5">Diamond &amp; 916 Daily</span>
+          <span class="text-xs sm:text-sm text-[#5A3A22] font-semibold mt-1">Diamond &amp; 916 Daily</span>
         </a>
 
       </div>
@@ -688,7 +688,7 @@
 
 
     <!-- ==================== 6. CURATED FOR YOU (TABBED LIFESTYLE SHOWCASE) ==================== -->
-    <section id="curated" class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-12 lg:py-20">
+    <section id="curated" class="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 py-8 lg:py-12">
       
       <!-- Centered Header Block -->
       <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10 space-y-2 sm:space-y-3 reveal-on-scroll">
