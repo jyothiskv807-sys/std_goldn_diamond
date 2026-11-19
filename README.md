@@ -20,7 +20,6 @@ This is a production-ready, mobile-first landing page crafted strictly in accord
 | **WhatsApp** | `https://wa.me/919447251916` |
 | **Hours** | Mon – Sat: 9:30 AM – 7:30 PM (Daily closing: 7:30 PM) |
 | **Rating** | 4.8 ★ from 90 Google reviews |
-| **Opening Date** | 19-02-2024 |
 | **Instagram** | [@sfj__gold](https://instagram.com/sfj__gold) |
 | **Domain** | [standardgold.in](https://standardgold.in) |
 
