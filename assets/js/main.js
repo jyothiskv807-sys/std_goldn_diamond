@@ -211,15 +211,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.getElementById('nextTestimonialBtn');
   const dots = document.querySelectorAll('.testimonial-dot');
   let currentSlide = 0;
-  const totalSlides = (carouselContainer && carouselContainer.children.length) ? carouselContainer.children.length : 3;
 
   function goToSlide(slideIndex) {
     if (!carouselContainer) return;
+    const slides = carouselContainer.children;
+    const totalSlides = slides.length || 5;
     currentSlide = (slideIndex + totalSlides) % totalSlides;
-    // Calculate percentage based on total slide count in the flex track
-    const offsetPercentage = (currentSlide * 100) / totalSlides;
-    carouselContainer.style.transform = `translateX(-${offsetPercentage}%)`;
-    dots.forEach((dot, idx) => {
+    
+    // Each slide is 100% width of the carousel container (translateX in multiples of -100%)
+    carouselContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    const allDots = document.querySelectorAll('.testimonial-dot');
+    allDots.forEach((dot, idx) => {
       if (idx === currentSlide) {
         dot.classList.add('bg-royalGold', 'w-7');
         dot.classList.remove('bg-[#3A3320]', 'w-2.5');
@@ -245,22 +248,45 @@ document.addEventListener('DOMContentLoaded', () => {
   if (prevBtn) {
     prevBtn.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       window.sfjPrevSlide();
     });
   }
   if (nextBtn) {
     nextBtn.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       window.sfjNextSlide();
     });
   }
   dots.forEach(dot => {
     dot.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       const slide = parseInt(dot.getAttribute('data-slide') || '0', 10);
       window.sfjGoToSlide(slide);
     });
   });
+
+  // Touch Swipe Support for Mobile
+  if (carouselContainer) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    carouselContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    carouselContainer.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) {
+          window.sfjNextSlide();
+        } else {
+          window.sfjPrevSlide();
+        }
+      }
+    }, { passive: true });
+  }
 
   const testimonialSection = document.getElementById('testimonials');
   if (testimonialSection) {
