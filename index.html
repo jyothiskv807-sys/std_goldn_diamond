@@ -60,7 +60,7 @@
   </script>
 
   <!-- Custom Styles (with cache buster) -->
-  <link rel="stylesheet" href="assets/css/style.css?v=20261120d">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261120e">
 
   <!-- JSON-LD LocalBusiness Schema -->
   <script type="application/ld+json">
@@ -322,20 +322,23 @@
       
       <!-- RESPONSIVE HERO VIEW (Unified full-bleed blended background image layout) -->
       <div class="relative w-full min-h-[480px] sm:min-h-[500px] lg:min-h-[490px] flex items-start">
-        <!-- Background Image with Dark Vignette Gradient -->
+        <!-- Background Image with Responsive Contrast Overlays -->
         <div class="absolute inset-0 z-0 overflow-hidden">
           <img 
             src="assets/images/hero-editorial.jpg" 
             alt="Kerala Bridal Gold and Diamond Jewellery - Standard Gold and Diamonds Payyavoor" 
-            class="w-full h-full object-cover object-[70%_top] sm:object-center lg:object-center"
+            class="w-full h-full object-cover object-top sm:object-center lg:object-center"
+            style="object-position: center 10%;"
             loading="eager"
           >
-          <!-- Base dark film tint for mobile contrast so text is crystal-clear over jewellery -->
-          <div class="absolute inset-0 bg-[#0A0A0A]/60 sm:bg-[#0A0A0A]/40 lg:bg-transparent"></div>
-          <!-- Horizontal vignette gradient: deep black on left fading into image on right -->
-          <div class="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/90 sm:via-[#0A0A0A]/85 lg:via-[#0A0A0A]/70 to-[#0A0A0A]/40 lg:to-transparent"></div>
-          <!-- Vertical vignette gradient: smoothly blends top and bottom into #0A0A0A canvas -->
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/30 lg:via-transparent to-black/40 lg:to-black/30"></div>
+          <!-- Mobile Atmospheric Film Tint (Gentle dark tint so bride & jewellery are clearly visible in the background) -->
+          <div class="absolute inset-0 bg-black/40 lg:hidden"></div>
+          <!-- Mobile Top/Bottom Vignette (Fades bottom smoothly into page canvas) -->
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-black/35 lg:hidden"></div>
+
+          <!-- Desktop Gradient Vignettes (100% untouched for widescreen view) -->
+          <div class="absolute inset-0 hidden lg:block bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/75 to-transparent"></div>
+          <div class="absolute inset-0 hidden lg:block bg-gradient-to-t from-[#0A0A0A] via-transparent to-black/30"></div>
         </div>
 
         <!-- Content Overlay (Pushed directly below header with zero awkward gap) -->
@@ -355,27 +358,27 @@
             </div>
 
             <!-- Main Headline -->
-            <h1 class="font-serif text-[2.15rem] sm:text-5xl lg:text-6xl font-bold leading-[1.12] text-softWhite tracking-tight">
+            <h1 class="font-serif text-[2.15rem] sm:text-5xl lg:text-6xl font-bold leading-[1.12] text-softWhite tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Timeless Elegance, Crafted for You.
             </h1>
 
             <!-- Subtext -->
-            <p class="text-sm sm:text-base lg:text-lg text-[#EDE8DC]/90 font-light leading-relaxed">
+            <p class="text-sm sm:text-base lg:text-lg text-[#EDE8DC] font-light leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
               Pure 916 Gold • Certified Diamonds • Bespoke Kerala Bridal Trousseaus in Payyavoor, Kannur. Celebrating Malabar's finest wedding traditions.
             </p>
 
             <!-- CTA Buttons -->
             <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5">
-              <a href="#new-arrivals" class="bg-[#FAF6EC] text-[#0A0A0A] hover:bg-royalGold transition-all duration-300 rounded-md px-7 py-3.5 sm:py-3 text-xs font-semibold uppercase tracking-wider shadow-lg flex items-center justify-center min-h-[44px]">
+              <a href="#new-arrivals" class="bg-[#FAF6EC] text-[#0A0A0A] hover:bg-royalGold transition-all duration-300 rounded-md px-7 py-3.5 sm:py-3 text-xs font-semibold uppercase tracking-wider shadow-xl flex items-center justify-center min-h-[44px]">
                 Explore Collections
               </a>
-              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20jewellery%20collections%20at%20Standard%20Gold%20Payyavoor." target="_blank" rel="noopener noreferrer" class="border border-royalGold/60 text-lightGold hover:bg-royalGold/20 transition-all duration-300 rounded-md px-6 py-3.5 sm:py-3 text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 min-h-[44px]">
+              <a href="https://wa.me/919447251916?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20jewellery%20collections%20at%20Standard%20Gold%20Payyavoor." target="_blank" rel="noopener noreferrer" class="bg-[#14120E]/80 backdrop-blur-md border border-royalGold text-lightGold hover:bg-royalGold/20 transition-all duration-300 rounded-md px-6 py-3.5 sm:py-3 text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 min-h-[44px] shadow-lg">
                 <span>Enquire on WhatsApp</span>
               </a>
             </div>
 
             <!-- Proof Line -->
-            <div class="pt-3 sm:pt-4 text-xs text-[#EDE8DC]/70 font-light flex flex-wrap items-center gap-2">
+            <div class="pt-3 sm:pt-4 text-xs text-[#EDE8DC]/90 font-light flex flex-wrap items-center gap-2 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
               <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
               <span>Open Today until 7:30 PM</span>
               <span>•</span>
@@ -1155,6 +1158,6 @@
   </div>
 
   <!-- JavaScript (with cache buster) -->
-  <script src="assets/js/main.js?v=20261120d"></script>
+  <script src="assets/js/main.js?v=20261120e"></script>
 </body>
 </html>
