@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A67C00" />
+      <stop offset="35%" stop-color="#F1D77A" />
+      <stop offset="70%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#8A6300" />
+    </linearGradient>
+    <linearGradient id="goldLight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4AF37" />
+      <stop offset="50%" stop-color="#FFF2B2" />
+      <stop offset="100%" stop-color="#A67C00" />
+    </linearGradient>
+    <radialGradient id="darkBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#141414" />
+      <stop offset="85%" stop-color="#0A0A0A" />
+      <stop offset="100%" stop-color="#050505" />
+    </radialGradient>
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Outer Circle Background -->
+  <circle cx="250" cy="250" r="240" fill="url(#darkBg)" stroke="url(#goldGrad)" stroke-width="4" />
+  <!-- Inner Ornamental Ring -->
+  <circle cx="250" cy="250" r="226" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.65" />
+  <circle cx="250" cy="250" r="216" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.4" />
+
+  <!-- Diamond Facets Icon -->
+  <g id="diamond-icon" transform="translate(0, -35)">
+    <!-- Top Crown -->
+    <polygon points="250,95 210,135 290,135" fill="url(#goldLight)" opacity="0.95" />
+    <polygon points="210,135 160,135 190,115 210,135" fill="url(#goldGrad)" opacity="0.8" />
+    <polygon points="290,135 340,135 310,115 290,135" fill="url(#goldGrad)" opacity="0.8" />
+    <polygon points="190,115 250,95 210,135" fill="url(#goldLight)" opacity="0.6" />
+    <polygon points="310,115 250,95 290,135" fill="url(#goldLight)" opacity="0.6" />
+    
+    <!-- Pavilion / Lower V-shape -->
+    <polygon points="250,215 210,135 290,135" fill="url(#goldGrad)" opacity="0.9" />
+    <polygon points="250,215 160,135 210,135" fill="url(#goldLight)" opacity="0.75" />
+    <polygon points="250,215 340,135 290,135" fill="url(#goldLight)" opacity="0.75" />
+
+    <!-- Sparkle Stars -->
+    <circle cx="250" cy="95" r="3" fill="#FFF8D6" filter="url(#goldGlow)" />
+    <circle cx="160" cy="135" r="2.5" fill="#FFF8D6" />
+    <circle cx="340" cy="135" r="2.5" fill="#FFF8D6" />
+    <circle cx="250" cy="215" r="3" fill="#FFF8D6" filter="url(#goldGlow)" />
+  </g>
+
+  <!-- Monogram: SFJ -->
+  <text x="250" y="275" font-family="'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="82" font-weight="700" letter-spacing="9" fill="url(#goldLight)" text-anchor="middle" filter="url(#goldGlow)">SFJ</text>
+
+  <!-- Accent Divider with Diamond -->
+  <path d="M140,295 L225,295 M275,295 L360,295" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.7" />
+  <polygon points="250,290 256,295 250,300 244,295" fill="url(#goldLight)" />
+
+  <!-- Subtitle Text -->
+  <text x="250" y="325" font-family="'Poppins', 'Montserrat', sans-serif" font-size="16" font-weight="500" letter-spacing="5" fill="#EDE8DC" text-anchor="middle" opacity="0.95">STANDARD</text>
+  <text x="250" y="350" font-family="'Poppins', 'Montserrat', sans-serif" font-size="12" font-weight="400" letter-spacing="4" fill="url(#goldLight)" text-anchor="middle">GOLD &amp; DIAMONDS</text>
+  
+  <!-- Location & Heritage -->
+  <text x="250" y="390" font-family="'Poppins', sans-serif" font-size="10" font-weight="300" letter-spacing="3" fill="#A67C00" text-anchor="middle">PAYYAVOOR • KANNUR</text>
+  <circle cx="205" cy="387" r="1.5" fill="#A67C00" />
+  <circle cx="295" cy="387" r="1.5" fill="#A67C00" />
+</svg>
