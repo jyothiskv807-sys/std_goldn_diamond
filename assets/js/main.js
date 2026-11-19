@@ -395,4 +395,61 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
+
+  // ==================== 9. TACTILE CLICK RIPPLE & FULL-CARD INTERACTIONS ====================
+  function createGoldRipple(e) {
+    const target = e.currentTarget;
+    if (!target) return;
+
+    const rect = target.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    ripple.className = 'gold-ripple';
+
+    const size = Math.max(rect.width, rect.height) * 0.9;
+    ripple.style.width = ripple.style.height = `${size}px`;
+
+    const clientX = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : null);
+    const clientY = e.clientY || (e.touches && e.touches[0] ? e.touches[0].clientY : null);
+
+    const x = clientX ? (clientX - rect.left - size / 2) : (rect.width / 2 - size / 2);
+    const y = clientY ? (clientY - rect.top - size / 2) : (rect.height / 2 - size / 2);
+
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+
+    // Ensure parent clips ripple cleanly
+    const compPos = window.getComputedStyle(target).position;
+    if (compPos === 'static') {
+      target.style.position = 'relative';
+    }
+    const compOver = window.getComputedStyle(target).overflow;
+    if (compOver !== 'hidden') {
+      target.style.overflow = 'hidden';
+    }
+
+    target.appendChild(ripple);
+    setTimeout(() => {
+      ripple.remove();
+    }, 600);
+  }
+
+  // Attach ripple to all interactive buttons, cards, pills, tabs
+  const rippleElements = document.querySelectorAll(
+    'button, .sheen-btn, .gold-gradient-bg, a.rounded-md, a.rounded-full, a.rounded-xl, .curated-tab-btn, .category-clean-tile, .copy-phone-btn, #prevTestimonialBtn, #nextTestimonialBtn, #langToggleBtn, #langToggleBtnDesktop, #mobileMenuBtn, #closeMobileMenuBtn, #new-arrivals article, .portrait-lifestyle-card, aside[aria-label="Mobile Quick Actions"] a'
+  );
+  rippleElements.forEach(el => {
+    el.addEventListener('pointerdown', createGoldRipple, { passive: true });
+  });
+
+  // Make product cards and lifestyle cards full-card clickable
+  const fullClickCards = document.querySelectorAll('#new-arrivals article, .portrait-lifestyle-card');
+  fullClickCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      const link = card.querySelector('a[href^="https://wa.me"]');
+      if (link) {
+        link.click();
+      }
+    });
+  });
 });

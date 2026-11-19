@@ -576,3 +576,259 @@ h1, h2, h3, h4, .font-serif {
   background-clip: text;
   animation: goldShimmer 3s ease-in-out infinite;
 }
+
+/* ==================== UNIVERSAL HOVER & CLICK MICRO-ANIMATIONS ==================== */
+
+/* 1. Universal Touch & Active Click Compression */
+button,
+a,
+.curated-tab-btn,
+.category-clean-tile,
+.portrait-lifestyle-card,
+#new-arrivals article {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Tactile press-down effect on click/touch */
+button:active:not(:disabled),
+a.sheen-btn:active,
+a.gold-gradient-bg:active,
+a.rounded-md:active,
+a.rounded-full:active,
+a.rounded-xl:active,
+.curated-tab-btn:active,
+.copy-phone-btn:active,
+#langToggleBtn:active,
+#langToggleBtnDesktop:active,
+#mobileMenuBtn:active,
+#closeMobileMenuBtn:active {
+  transform: scale(0.95) translateY(0) !important;
+  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 2. Interactive Button Lift & Gold Glow on Hover */
+a.gold-gradient-bg,
+a.sheen-btn,
+a.rounded-md,
+a.rounded-full,
+a.rounded-xl,
+button.rounded-md,
+button.rounded-full,
+button.rounded-xl,
+.copy-phone-btn,
+#langToggleBtn,
+#langToggleBtnDesktop {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.25s ease, 
+              border-color 0.25s ease, 
+              color 0.25s ease;
+}
+
+a.gold-gradient-bg:hover,
+a.sheen-btn:hover,
+a.rounded-md:hover,
+a.rounded-full:hover,
+a.rounded-xl:hover,
+button.rounded-md:hover,
+button.rounded-full:hover,
+.copy-phone-btn:hover {
+  transform: translateY(-2.5px);
+  box-shadow: 0 8px 24px -4px rgba(212, 175, 55, 0.38);
+}
+
+/* 3. Signature Boutique Arrival Product Cards (Hover Lift & Active State) */
+#new-arrivals article {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s ease;
+  cursor: pointer;
+}
+#new-arrivals article:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 38px -10px rgba(0, 0, 0, 0.18), 0 0 22px rgba(212, 175, 55, 0.2);
+  border-color: #D4AF37;
+}
+#new-arrivals article:active {
+  transform: scale(0.985) translateY(-3px);
+}
+#new-arrivals article img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#new-arrivals article:hover img {
+  transform: scale(1.06);
+}
+
+/* 4. Category Clean Tiles (Hover Elevation & Zoom) */
+.category-clean-tile {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s ease;
+}
+.category-clean-tile:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 36px -8px rgba(90, 58, 34, 0.24), 0 0 20px rgba(212, 175, 55, 0.18);
+  border-color: #A67C00;
+}
+.category-clean-tile:active {
+  transform: scale(0.96) translateY(0);
+}
+.category-clean-tile img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.category-clean-tile:hover img {
+  transform: scale(1.08);
+}
+
+/* 5. Curated Tab Buttons (Smooth Hover Lift & Press) */
+.curated-tab-btn {
+  transition: color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.curated-tab-btn:hover {
+  color: #1C1C1C;
+  transform: translateY(-1.5px);
+}
+.curated-tab-btn:active {
+  transform: scale(0.95);
+}
+
+/* 6. Curated Lifestyle Cards */
+.portrait-lifestyle-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease;
+  cursor: pointer;
+}
+.portrait-lifestyle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 42px -10px rgba(0, 0, 0, 0.55), 0 0 25px rgba(212, 175, 55, 0.25);
+}
+.portrait-lifestyle-card:active {
+  transform: scale(0.975) translateY(-3px);
+}
+.portrait-lifestyle-card img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.portrait-lifestyle-card:hover img {
+  transform: scale(1.06);
+}
+
+/* 7. Testimonial Carousel Controls (Hover Glow & Active Spring) */
+#prevTestimonialBtn,
+#nextTestimonialBtn {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.25s ease, 
+              border-color 0.25s ease, 
+              box-shadow 0.25s ease;
+}
+#prevTestimonialBtn:hover,
+#nextTestimonialBtn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.45);
+}
+#prevTestimonialBtn:active,
+#nextTestimonialBtn:active {
+  transform: scale(0.9);
+}
+
+.testimonial-dot {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.testimonial-dot:hover {
+  transform: scale(1.25);
+}
+
+/* 8. Navigation Links (Secondary Nav & Swipeable Strip) */
+.category-nav-link {
+  transition: color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.category-nav-link:hover {
+  transform: translateY(-1px);
+}
+.category-nav-link:active {
+  transform: scale(0.95);
+}
+
+#mainHeader .overflow-x-auto a {
+  transition: color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#mainHeader .overflow-x-auto a:hover {
+  transform: translateY(-1px);
+}
+#mainHeader .overflow-x-auto a:active {
+  transform: scale(0.94);
+}
+
+/* 9. Mobile Sticky Bottom Bar Buttons */
+aside[aria-label="Mobile Quick Actions"] a {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+}
+aside[aria-label="Mobile Quick Actions"] a:active {
+  transform: scale(0.93) !important;
+}
+
+/* 10. Desktop Floating WhatsApp Button */
+.fixed.bottom-6.right-6 a > div {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.fixed.bottom-6.right-6 a:hover > div {
+  transform: scale(1.12) translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+}
+.fixed.bottom-6.right-6 a:active > div {
+  transform: scale(0.92) !important;
+}
+
+/* 11. Micro Trust Pills & Badges Hover Pop */
+.badge-interactive,
+.inline-flex.rounded-full.border {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+.badge-interactive:hover,
+.inline-flex.rounded-full.border:hover {
+  transform: scale(1.035);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+}
+
+/* 12. Pre-Footer Bridal Consultation Card Hover Glow */
+footer .rounded-2xl.border-\[\#D4AF37\]\/40 {
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+footer .rounded-2xl.border-\[\#D4AF37\]\/40:hover {
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.35), 0 0 25px rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.6);
+}
+
+/* 13. Bento Locator Cards Hover Lift */
+#visit-us .bg-\[\#0A0A0A\].border-\[\#3A3320\] {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.35s ease;
+}
+#visit-us .bg-\[\#0A0A0A\].border-\[\#3A3320\]:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.12);
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+/* 14. Luxury Gold Ripple Click Animation */
+.gold-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(241, 215, 122, 0.55) 0%, rgba(212, 175, 55, 0.3) 50%, transparent 75%);
+  transform: scale(0);
+  animation: goldRippleKeyframe 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: none;
+  z-index: 60;
+}
+
+@keyframes goldRippleKeyframe {
+  0% {
+    transform: scale(0);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
