@@ -1,0 +1,451 @@
+================================================================================
+STANDARD GOLD & DIAMONDS (SFJ) — COMPLETE WEBSITE SPECIFICATION & CONTENT
+Boutique Showroom in Payyavoor, Kannur, Kerala (PIN: 670633)
+Official Website: https://standardgold.in/ | Live: https://jyothiskv807-sys.github.io/std_goldn_diamond/
+================================================================================
+
+TABLE OF CONTENTS
+--------------------------------------------------------------------------------
+1. BRAND IDENTITY & BUSINESS OVERVIEW
+2. DESIGN PHILOSOPHY & ART DIRECTION
+3. COMPLETE COLOR PALETTE & DESIGN TOKENS
+4. TYPOGRAPHY SYSTEM & RESPONSIVE SCALING
+5. SITE ARCHITECTURE & SECTION-BY-SECTION LAYOUT
+6. FULL WEBSITE CONTENT & COPY (VERBATIM)
+7. INTERACTIVE FEATURES, ANIMATIONS & JAVASCRIPT LOGIC
+8. TECHNICAL STACK, SEO, SCHEMA & ACCESSIBILITY
+9. DEPLOYMENT & REPOSITORY CONFIGURATION
+================================================================================
+
+
+================================================================================
+1. BRAND IDENTITY & BUSINESS OVERVIEW
+================================================================================
+- Brand Name: Standard Gold & Diamonds (SFJ)
+- Short Form / Acronym: SFJ Gold
+- Primary Tagline: "Timeless Elegance. Crafted for You."
+- Brand Heritage: Established boutique showroom born in the heart of Payyavoor, Kannur,
+  dedicated to authentic Kerala jewellery craftsmanship, pure 916 hallmark gold,
+  certified solitaire diamonds, and bespoke wedding bridal trousseaus.
+- Showroom Address: Standard Gold & Diamonds, Main Road, Payyavoor, Kannur District,
+  Kerala, India, PIN: 670633
+- Geographic Service Area: Payyavoor, Sreekandapuram, Irikkur, Iritty, and Kannur District.
+- Operating Hours:
+  * Monday through Saturday: 9:30 AM – 7:30 PM (Daily closing time: 7:30 PM)
+  * Sunday: Confirm with showroom for special wedding and festival consultation hours.
+- Direct Contact Phone: 094472 51916 / +91 94472 51916 (tel:+919447251916)
+- Direct WhatsApp Channel: https://wa.me/919447251916
+- Verified Public Reputation: 4.8 ★ rating across 90+ verified Google Reviews
+- Official Instagram Handle: @sfj__gold (https://instagram.com/sfj__gold)
+- Official Domain: https://standardgold.in/
+
+
+================================================================================
+2. DESIGN PHILOSOPHY & ART DIRECTION
+================================================================================
+- Core Aesthetic: High-end luxury editorial magazine style, drawing inspiration from
+  world-class fine jewellery ateliers (Cartier, Tiffany & Co., Harry Winston, Tanishq,
+  and traditional Malabar bridal houses).
+- Visual Rhythm: Alternating high-contrast visual sections:
+  * Dark Canvas (Black / Rich Espresso #0A0A0A) for Hero, Bridal Suite, Why Us, Location, and Footer.
+  * Warm Ivory Canvas (#FAF6EC) for Collections and Our Story sections, creating an
+    editorial, tactile breathing room that highlights pure 22K yellow gold warm tones.
+- Anti-Cliché / Craft Quality Standards:
+  * No generic AI tropes (no fake arrow tails on buttons, no all-caps eyebrows like
+    "OUR SERVICES", no single-word colored hero headlines).
+  * Authentic Kerala jewelry terminology (Kasumala, Mullamottu, Nagapadam, Antique
+    Chokers, Solitaires, Polki).
+  * Realistic local showroom grounding: Clear mention of Payyavoor town, proximity to
+    Sreekandapuram & Iritty, real Google review stats, and exact closing times.
+  * Micro-animations: Smooth gold hover sheens, subtle floating luxury artwork frames,
+    smooth-scroll active navigation underline, and organic ambient light radial glows.
+
+
+================================================================================
+3. COMPLETE COLOR PALETTE & DESIGN TOKENS
+================================================================================
+
+PRIMARY BRAND PALETTE:
+--------------------------------------------------------------------------------
+1. Rich Black (Background Dark Canvas)
+   - Hex: #0A0A0A | RGB: (10, 10, 10)
+   - CSS Variable: var(--bg-dark)
+   - Usage: Primary dark background, header backdrop, section canvas for Hero, Bridal,
+     Why Choose Us, Location, and Footer.
+
+2. Deep Charcoal Canvas
+   - Hex: #0D0D0D / #14120E | RGB: (13, 13, 13) / (20, 18, 14)
+   - Usage: Dark luxury card backgrounds, image frame borders, subtle section dividers.
+
+3. Royal Gold (Primary Brand Accent)
+   - Hex: #D4AF37 | RGB: (212, 175, 55)
+   - CSS Variable: var(--gold-primary)
+   - Usage: Primary borders, button outlines, icons, badge highlights, active states.
+
+4. Light Gold (Illumination Accent)
+   - Hex: #F1D77A | RGB: (241, 215, 122)
+   - CSS Variable: var(--gold-light)
+   - Usage: Hover text highlights, gradient highlights, star rating text.
+
+5. Deep Antique Gold (Warm Shadow Accent)
+   - Hex: #A67C00 | RGB: (166, 124, 0)
+   - CSS Variable: var(--gold-deep)
+   - Usage: Section subtitle dividers, dark gold gradient stops, hover links on light backgrounds.
+
+6. Warm Showroom Walnut / Bronze
+   - Hex: #5A3A22 | RGB: (90, 58, 34)
+   - CSS Variable: var(--walnut)
+   - Usage: Secondary text on ivory backgrounds, button hover text, subtle ambient glows.
+
+7. Ivory Canvas (Light Section Background)
+   - Hex: #FAF6EC | RGB: (250, 246, 236)
+   - CSS Variable: var(--bg-light)
+   - Usage: High-contrast editorial background for Collections and Our Story sections.
+
+8. Charcoal / Onyx Text (Light Section Copy)
+   - Hex: #1C1C1C | RGB: (28, 28, 28)
+   - CSS Variable: var(--text-light)
+   - Usage: Body copy and headings in Ivory sections.
+
+9. Soft Cream / Ecru (Dark Section Copy)
+   - Hex: #EDE8DC | RGB: (237, 232, 220)
+   - CSS Variable: var(--text-dark)
+   - Usage: Body text and secondary headings on Dark Canvas sections.
+
+10. Muted Gold Border Divider
+    - Hex: #3A3320 | RGB: (58, 51, 32)
+    - CSS Variable: var(--divider-gold)
+    - Usage: Subtle horizontal rule borders between dark sections.
+
+METALLIC GRADIENTS & SPECIAL FX:
+--------------------------------------------------------------------------------
+- Gold Metallic Text Gradient:
+  linear-gradient(135deg, #F1D77A 0%, #D4AF37 50%, #A67C00 100%)
+- Gold Metallic Button Gradient:
+  linear-gradient(135deg, #F1D77A 0%, #D4AF37 60%, #B8860B 100%)
+- Ivory Canvas Atmosphere:
+  radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+  radial-gradient(circle at 90% 80%, rgba(90, 58, 34, 0.04) 0%, transparent 40%)
+- Dark Canvas Atmosphere:
+  radial-gradient(circle at 50% 0%, rgba(90, 58, 34, 0.15) 0%, transparent 55%),
+  radial-gradient(circle at 100% 40%, rgba(166, 124, 0, 0.08) 0%, transparent 50%),
+  radial-gradient(circle at 0% 100%, rgba(212, 175, 55, 0.05) 0%, transparent 50%)
+- WhatsApp Pulse Green:
+  #25D366 with glow shadow rgba(37, 211, 102, 0.4)
+
+
+================================================================================
+4. TYPOGRAPHY SYSTEM & RESPONSIVE SCALING
+================================================================================
+
+PRIMARY FONT FAMILIES:
+--------------------------------------------------------------------------------
+1. Display & Headings Serif:
+   - Font Family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif
+   - Weights: 400 (Regular), 500 (Medium), 600 (SemiBold), 700 (Bold), Italic
+   - Characteristics: Elegant high-contrast strokes, refined luxury editorial aesthetic.
+
+2. Body & UI Sans-Serif:
+   - Font Family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+   - Weights: 300 (Light), 400 (Regular), 500 (Medium), 600 (SemiBold), 700 (Bold)
+   - Characteristics: Crisp, geometric, ultra-legible numerals and multilingual typography.
+
+RESPONSIVE ROOT FONT-SIZE SCALING:
+--------------------------------------------------------------------------------
+- Mobile (< 640px): 16.5px base root font
+- Tablet (≥ 640px): 17px base root font
+- Desktop (≥ 1024px): 18.5px base root font (~16% boost across all rem units)
+- Wide Desktop (≥ 1440px): 19.5px base root font (~22% boost)
+- Global Body Line-Height: 1.65 for editorial breathing room.
+
+TYPE HIERARCHY:
+--------------------------------------------------------------------------------
+- Hero Headline: font-serif text-4xl (mobile) -> text-5xl (tablet) -> text-6xl (laptop) -> text-7xl (desktop)
+- Section Titles (H2): font-serif text-3xl (mobile) -> text-4xl (tablet) -> text-5xl (desktop)
+- Card Headlines (H3): font-serif text-2xl -> lg:text-[27px]
+- Card Sub-headings (H4): font-serif text-xl -> lg:text-2xl
+- Hero Subtitle / Narrative Leads: text-base -> lg:text-xl
+- Section Body Paragraphs: text-base -> lg:text-[17.5px]
+- Feature Card Body Copy: text-sm -> lg:text-[15.5px]
+- Navigation Links: text-sm -> lg:text-[15px] (tracking-wide)
+- CTA Buttons: text-xs -> text-sm -> lg:text-base (tracking-wider uppercase font-semibold)
+- Micro Badges & Review Proofs: text-xs -> lg:text-sm
+
+
+================================================================================
+5. SITE ARCHITECTURE & SECTION-BY-SECTION LAYOUT
+================================================================================
+
+1. STICKY NAVBAR (#mainHeader)
+   - Position: Fixed top-0 left-0 right-0, z-50
+   - Height: h-20 (5rem / ~92.5px on desktop)
+   - Background: Dark glassmorphic #0A0A0A/90 with backdrop-blur-md & border-b border-[#D4AF37]/20
+   - Layout:
+     * Left: Brand logo emblem + "Standard" typography with "Gold & Diamonds • Payyavoor" sub-label
+     * Center: Desktop navigation menu (Collections, Bridal Suite, Our Story, Why SFJ, Visit Showroom)
+     * Right: Malayalam accent language toggle pill ("🌐 മലയാളം" <-> "EN") + Primary WhatsApp CTA button
+     * Mobile: Quick call button + Mobile hamburger drawer trigger
+
+2. MOBILE DRAWER MENU (#mobileMenuDrawer & #mobileMenuBackdrop)
+   - Position: Fixed off-canvas right slide-out (w-80 max-w-[85%])
+   - Elements: Close button, brand mark, vertical navigation links, Payyavoor address,
+     operating hours (Closes 7:30 PM), full-width WhatsApp CTA & Direct Phone CTA.
+
+3. HERO SECTION (#hero)
+   - Background: Dark Canvas with subtle ambient radial gold lighting
+   - Desktop Alignment: Reduced gap with lg:pt-20 and lg:pt-5, eliminating flex-centering
+     dead space so content sits ~23px cleanly under the fixed header.
+   - Grid: 2-column editorial layout (7 cols left, 5 cols right):
+     * Left: 4.8★ Google Review badge, Cormorant Garamond main headline, toggleable Malayalam
+       subtitle, descriptive paragraph, twin CTAs ("Explore Collections" & "Chat on WhatsApp"),
+       micro showroom proof strip (Open today until 7:30 PM, Payyavoor Kannur, Direct line).
+     * Right: Luxury artwork frame with floating slow-animation, rounded-2xl gold border,
+       and in-frame "Bridal Signature Suite — Royal Malabar Collection" showroom tag.
+
+4. TRUST & CREDIBILITY STRIP
+   - Background: Solid dark walnut/black (#14120F) with double horizontal gold borders
+   - Grid: 3-column trust proof metrics:
+     * Stat 1: 4.8 ★ Google Rating (From 90 Verified Reviews)
+     * Stat 2: 916 Pure Karat Benchmark (Gold, Diamond & Bridal Specialist Craftsmen)
+     * Stat 3: Payyavoor, Kannur Local Heritage (Serving families near Sreekandapuram & Iritty)
+
+5. SIGNATURE COLLECTIONS (#collections)
+   - Background: Warm Ivory Canvas (#FAF6EC) with gold accent divider
+   - Introduction: "Signature Collections — From sacred wedding traditions to modern red-carpet brilliance"
+   - Grid: 3-pillar product collection cards (hover-elevate with sheen buttons):
+     * Card 1: Gold Jewellery (Authentic Kerala Kasumala coin necklace, Mullamottu, antique chokers, daily-wear 916 gold)
+     * Card 2: Diamond Jewellery (Brilliant-cut cushion solitaire engagement ring, certified diamonds)
+     * Card 3: Bridal Jewellery (Traditional Kerala temple wedding sets, bridal trousseaus)
+
+6. BESPOKE BRIDAL SUITE (#bridal)
+   - Background: Dark Canvas (#0A0A0A) with gold ambient glow
+   - Grid: 2-column layout (5 cols left visual, 7 cols right narrative):
+     * Left: Kerala Bride in wedding gold & diamond trousseau, zoom-frame effect, with floating "Bridal Consultation" stamp.
+     * Right: Section title "Crafting the Wedding of Your Dreams", Malabar trousseau narrative,
+       twin highlight cards ("Custom Weight & Design" & "Matching Family Sets"), direct WhatsApp bridal consultation CTA.
+
+7. OUR STORY / SHOWROOM HERITAGE (#about)
+   - Background: Warm Ivory Canvas (#FAF6EC)
+   - Grid: 2-column layout (7 cols left story, 5 cols right visual):
+     * Left: "Born in Payyavoor, Dedicated to Elegance", narrative celebrating unyielding purity,
+       warm Malabar hospitality, and the SFJ showroom experience (Pure 916 Gold, Transparent Gold Testing,
+       Patient Consultation, Made-to-Order Custom Heirlooms).
+     * Right: Visual showroom frame with interior jewellery displays and authentic Payyavoor craftsman showcase.
+
+8. WHY CHOOSE STANDARD GOLD & DIAMONDS (#why-us)
+   - Background: Pure Black (#0D0D0D) with gold dividers
+   - Grid: 4-column value proposition cards:
+     * 1. ⚖️ Uncompromised Purity (Strict 916 standards & certified diamonds)
+     * 2. 💎 Master Artistry (Intricate temple filigree to modern solitaire prong settings)
+     * 3. 📍 Trusted Local Jeweller (Conveniently located in Payyavoor town)
+     * 4. ✨ Custom Made-to-Order (Bespoke bridal heirlooms tailored to budget)
+   - Bottom CTA: Instagram follow pill (@sfj__gold).
+
+9. VISIT OUR PAYYAVOOR SHOWROOM (#visit-us)
+   - Background: Dark Canvas (#0A0A0A)
+   - Grid: 2-column layout (5 cols left details, 7 cols right map):
+     * Left: Address card (Standard Gold & Diamonds, Payyavoor, Kannur 670633), Operating Hours
+       (9:30 AM – 7:30 PM), Direct Phone with interactive "Copy" button (094472 51916),
+       "Get Directions" Google Maps CTA, and "Call Now" CTA.
+     * Right: Interactive Google Maps iframe embed centered directly on Payyavoor town with custom pin.
+
+10. FOOTER
+    - Background: Black (#000000) with muted gold border
+    - Layout:
+      * Column 1: SFJ Logo emblem, brand name, tagline ("Timeless Elegance. Crafted for You."),
+        showroom description, and Instagram icon pill.
+      * Column 2: Navigation quick links (Collections, Bridal Suite, Our Story, Why Choose SFJ, Showroom Location).
+      * Column 3: Showroom details (Address, Phone, Operating Hours, Instagram link) + WhatsApp CTA button.
+      * Bottom Bar: Copyright notice & domain link (standardgold.in).
+
+11. FLOATING ACTION ELEMENTS
+    - Desktop: Floating circular green WhatsApp button (bottom-right) with continuous pulse ring
+      and hover tooltip ("Chat with Payyavoor Showroom").
+    - Mobile: Sticky bottom bar (z-40) with Call Now button, WhatsApp button, and Directions button.
+
+
+================================================================================
+6. FULL WEBSITE CONTENT & COPY (VERBATIM)
+================================================================================
+
+[HEADER]
+- Logo: Standard Gold & Diamonds • SFJ Payyavoor
+- Navigation Links:
+  1. Collections (#collections)
+  2. Bridal Suite (#bridal)
+  3. Our Story (#about)
+  4. Why SFJ (#why-us)
+  5. Visit Showroom (#visit-us)
+- Language Toggle: "🌐 മലയാളം" (switches to "EN")
+- Header Button: "WhatsApp Us" (URL: https://wa.me/919447251916?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20jewellery%20collections.)
+
+[HERO SECTION]
+- Trust Badge: "★ 4.8 ★ • 90 Google Reviews • Payyavoor, Kannur"
+- Main Headline: "Timeless Elegance, Crafted for You."
+- Malayalam Subtitle (Toggleable): "തനിമയാർന്ന സ്വർണ്ണ, വജ്രാഭരണങ്ങളുടെ വിസ്മയ ശേഖരം • പയ്യാവൂർ, കണ്ണൂർ"
+- Subtext: "Gold • Diamond • Bridal Jewellery in Payyavoor, Kannur. Celebrating Kannur’s finest traditions with master 916 gold artistry, certified solitaire diamonds, and bespoke bridal trousseau sets."
+- Primary CTA Button: "Explore Collections" (href="#collections")
+- Secondary CTA Button: "Chat on WhatsApp" (URL: https://wa.me/919447251916...)
+- Micro Showroom Proof:
+  * "● Open Today until 7:30 PM"
+  * "● Payyavoor, Kannur (670633)"
+  * "● Direct Assistance: 094472 51916"
+- Image Tag: "Bridal Signature Suite — Royal Malabar Collection | Pure 916 Gold & Certified Diamonds"
+
+[TRUST STRIP]
+- Stat 1: "4.8 ★" | Label: "Google Rating" | Sub: "From 90 Verified Reviews"
+- Stat 2: "916" | Label: "Gold, Diamond & Bridal" | Sub: "Specialist Craftsmen"
+- Stat 3: "Kannur" | Label: "Serving Payyavoor" | Sub: "Near Sreekandapuram & Iritty"
+
+[COLLECTIONS SECTION]
+- Title: "Signature Collections"
+- Intro: "From sacred wedding traditions to modern red-carpet brilliance, explore pieces crafted to celebrate life’s grandest milestones in Payyavoor."
+- Card 1 (Gold Jewellery):
+  * Badge: "916 Purity"
+  * Title: "Gold Jewellery"
+  * Copy: "Exquisite Kerala traditional Kasumala, Mullamottu, antique chokers, and contemporary daily-wear 916 gold ornaments crafted with supreme precision."
+  * Button: "Enquire on WhatsApp" (Pre-filled text: "Hi, I am interested in your Gold Jewellery collection at Standard Gold & Diamonds Payyavoor.")
+- Card 2 (Diamond Jewellery):
+  * Badge: "Certified Diamonds"
+  * Title: "Diamond Jewellery"
+  * Copy: "Brilliant-cut, hand-selected solitaire engagement rings, diamond bangles, cocktail necklaces, and delicate pendants for enduring sparkle."
+  * Button: "Enquire on WhatsApp" (Pre-filled text: "Hi, I am interested in your Diamond Jewellery collection at Standard Gold & Diamonds Payyavoor.")
+- Card 3 (Bridal Jewellery):
+  * Badge: "Kerala Bridal Suites"
+  * Title: "Bridal Jewellery"
+  * Copy: "Comprehensive wedding trousseaus—grand bridal harams, waistbands (oddiyanam), jhumkas, and matching bridal party sets for Kannur celebrations."
+  * Button: "Enquire on WhatsApp" (Pre-filled text: "Hi, I am interested in your Bridal Jewellery collection at Standard Gold & Diamonds Payyavoor.")
+
+[BRIDAL SUITE SECTION]
+- Visual Tag: "Bespoke Bridal Trousseau Styling — Handpicked for weddings across Kannur."
+- Floating Stamp: "Bridal Consultation"
+- Title: "Crafting the Wedding of Your Dreams"
+- Copy: "Every bride in Malabar carries stories of family, tradition, and timeless celebration. At Standard Gold & Diamonds, our bridal specialists curate complete trousseau sets—from foundational Kasumalas and Nagapadams to dazzling diamond choker centerpieces."
+- Highlight 1: "Custom Weight & Design — Tailored to your budget and exact wedding attire aesthetics."
+- Highlight 2: "Matching Family Sets — Coordinated designs for mother-of-the-bride, sisters, and groom."
+- Button: "Plan Your Bridal Visit on WhatsApp" (Pre-filled text: "Hi, I would like to schedule a Bridal Consultation at Standard Gold & Diamonds Payyavoor.")
+
+[OUR STORY SECTION]
+- Title: "Born in Payyavoor, Dedicated to Elegance"
+- Paragraph 1: "Founded with a commitment to unyielding purity and warm Malabar hospitality, Standard Gold & Diamonds (SFJ) opened its showroom doors in the heart of Payyavoor, Kannur."
+- Paragraph 2: "We recognized that choosing jewellery is more than a purchase—it is an intimate emotion, an investment in generations, and the sparkle of lifelong memories. Our boutique showroom combines transparent gold testing with attentive, patient customer care."
+- Showroom Highlights:
+  * "✦ Pure 916 Gold: Every piece certified for genuine karat purity and certified diamond brilliance."
+  * "✦ Transparent Gold Testing: Accurate karatmeter assessment right in front of you."
+  * "✦ Attentive Consultation: Relaxed showroom seating with dedicated bridal styling experts."
+  * "✦ Made-to-Order Heirlooms: Bespoke creation for heirloom jewellery remodelling and wedding trousseaus."
+- Social Link: "Follow our updates: @sfj__gold on Instagram"
+
+[WHY CHOOSE US SECTION]
+- Title: "Why Choose Standard Gold & Diamonds"
+- Subtitle: "Rooted in Payyavoor, serving families with honest practices, master craftsmanship, and timeless creations."
+- Value 1: "⚖️ Uncompromised Purity — Strict 916 gold standards and certified diamonds with complete billing transparency for every purchase."
+- Value 2: "💎 Master Artistry — From intricate temple filigree to modern solitaire prong settings, every ornament reflects artisanal care."
+- Value 3: "📍 Trusted Local Jeweller — Conveniently located in Payyavoor town, serving families in Sreekandapuram, Irikkur, Iritty, and Kannur."
+- Value 4: "✨ Custom Made-to-Order — Have a dream heirloom concept or specific budget in mind? Our master craftsmen handcraft custom orders to your request."
+- Button: "Follow us on Instagram @sfj__gold"
+
+[VISIT SHOWROOM SECTION]
+- Title: "Visit Our Payyavoor Showroom"
+- Subtitle: "Conveniently situated in Payyavoor town, our showroom features dedicated display zones for gold, diamond, and bridal sets with attentive hospitality."
+- Address Box:
+  * "Showroom Address: Standard Gold & Diamonds, Payyavoor, Kannur, Kerala 670633"
+  * Note: "Easy access from Sreekandapuram & Iritty"
+- Hours Box:
+  * "Operating Hours: Monday – Saturday: 9:30 AM – 7:30 PM"
+  * "Sunday: [Confirm with shop for festival/wedding timings]"
+  * Note: "Closing time: 7:30 PM Daily"
+- Phone Box:
+  * "Direct Phone: 094472 51916 (tel:+919447251916)"
+  * Interactive "Copy" button (Copies 09447251916 with 2-second confirmation)
+- Action Buttons:
+  * "Get Directions" (Google Maps link to Payyavoor)
+  * "Call Now" (tel:+919447251916)
+- Map: Google Maps Embed for Payyavoor, Kannur 670633.
+
+[FOOTER]
+- Brand: "Standard Gold & Diamonds • SFJ"
+- Tagline: "Timeless Elegance. Crafted for You."
+- Description: "Premier jewellery showroom in Payyavoor, Kannur. Specializing in bespoke wedding bridal suites, pure 916 gold, and certified diamond collections."
+- Social: "@sfj__gold on Instagram"
+- Navigation Quick Links:
+  * Gold & Diamond Collections
+  * Bespoke Bridal Suite
+  * Our Story
+  * Why Choose SFJ Payyavoor
+  * Showroom Location & Map
+- Showroom Contact Block: Address, Phone, Hours, Instagram
+- Button: "Chat on WhatsApp"
+- Copyright: "© 2026 Standard Gold & Diamonds (SFJ). All rights reserved. Payyavoor, Kannur, Kerala 670633 • standardgold.in"
+
+
+================================================================================
+7. INTERACTIVE FEATURES, ANIMATIONS & JAVASCRIPT LOGIC
+================================================================================
+
+1. Responsive Mobile Drawer:
+   - Hamburger icon on mobile (< 768px) smoothly toggles the `#mobileMenuDrawer` with
+     backdrop blur and scroll locking on `document.body`.
+   - Automatically closes when any menu item is tapped.
+
+2. Dynamic Navbar Glassmorphism on Scroll:
+   - When user scrolls past 40px, `#mainHeader` transitions from transparent to solid
+     dark glassmorphism (`bg-[#0A0A0A]/95`, `backdrop-blur-md`, `border-b border-[#D4AF37]/20`).
+
+3. Active Navigation Highlighting:
+   - Intersection logic tracks scroll position across `#collections`, `#bridal`, `#about`,
+     `#why-us`, and `#visit-us`, dynamically applying gold active underline styles to
+     the corresponding desktop menu link.
+
+4. Scroll Reveal Animations (IntersectionObserver):
+   - `.reveal-on-scroll` triggers when elements enter 12% of the viewport, applying
+     smooth CSS transform (`translateY(0)` from `translateY(24px)`) and opacity fade-in.
+
+5. Malayalam Language Toggle:
+   - Tapping "🌐 മലയാളം" in the header dynamically toggles visibility of `.lang-ml`
+     elements across the page, providing bilingual Malayalam accents for native Kerala
+     visitors, and toggles the button label to "EN".
+
+6. One-Click Phone Number Copy:
+   - Tapping the "Copy" button next to 094472 51916 invokes the Clipboard API, copying
+     the plain number and displaying a momentary "Copied +91 94472 51916!" confirmation.
+
+7. Micro Hover Animations:
+   - `.sheen-btn`: Shimmering light reflection sweeps across gold buttons on hover.
+   - `.hover-elevate`: Luxury cards lift by -4px to -6px with gold drop-shadows.
+   - `.pulse-ring-effect`: Floating WhatsApp action button radiates continuous pulsating gold rings.
+
+
+================================================================================
+8. TECHNICAL STACK, SEO, SCHEMA & ACCESSIBILITY
+================================================================================
+- Core Technologies: Clean Semantic HTML5, Tailwind CSS via CDN, Vanilla JavaScript (ES6+),
+  Custom CSS variables & keyframes (`assets/css/style.css`).
+- Zero Dependencies: Zero heavy frameworks (no React/Vue overhead), loads instantly.
+- SEO & Social Meta Tags:
+  * Title: Standard Gold & Diamonds | Gold, Diamond & Bridal Jewellery in Payyavoor, Kannur
+  * Meta Description: Standard Gold & Diamonds (SFJ) in Payyavoor, Kannur, Kerala.
+    Discover handcrafted 916 Gold, Certified Diamonds, and bespoke Kerala Bridal Jewellery collections. Rated 4.8★ on Google (90 reviews).
+  * Canonical URL: https://standardgold.in/
+  * OpenGraph Tags: og:type, og:title, og:description, og:image, og:url, and complete business:contact_data coordinates.
+- Schema.org JSON-LD Structured Data:
+  * Schema Type: `JewelryStore` and `LocalBusiness`
+  * Includes official coordinates for Payyavoor, Kannur (670633), priceRange "₹₹₹₹",
+    openingHoursSpecification (Mo-Sa 09:30-19:30), aggregateRating (ratingValue 4.8, reviewCount 90),
+    and sameAs social profiles.
+
+
+================================================================================
+9. DEPLOYMENT & REPOSITORY CONFIGURATION
+================================================================================
+- GitHub Repository: https://github.com/jyothiskv807-sys/std_goldn_diamond
+- Active Branch: `main`
+- Active Hosting Deployments:
+  1. GitHub Pages: https://jyothiskv807-sys.github.io/std_goldn_diamond/
+  2. Vercel: Configured with `vercel.json` for instant zero-config static hosting
+     with optimal caching headers (`max-age=31536000` for assets).
+- Local Workspace Directory: `c:\Users\jyoth\OneDrive\Documents\freelance\std_goldn_diamond`
+- Master Text File Location: `c:\Users\jyoth\OneDrive\Documents\freelance\std_goldn_diamond\WEBSITE_COMPLETE_OVERVIEW.txt`
+================================================================================
+END OF SPECIFICATION
+================================================================================
