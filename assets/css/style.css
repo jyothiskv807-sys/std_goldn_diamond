@@ -12,7 +12,29 @@
   --divider-gold: #3A3320;
 }
 
-/* Base typography */
+/* Base typography & Root Scaling */
+html {
+  font-size: 16.5px;
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 18.5px;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 19.5px;
+  }
+}
+
 body {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: var(--text-dark);
@@ -20,6 +42,7 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.65;
 }
 
 h1, h2, h3, h4, .font-serif {
