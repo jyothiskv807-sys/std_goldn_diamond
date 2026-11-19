@@ -516,6 +516,14 @@ h1, h2, h3, h4, .font-serif {
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
 }
 
+/* Pre-Footer Bridal Cutout Seamless Blend (No borders, anchored flush to bottom) */
+.bride-cutout-blend {
+  -webkit-mask-image: radial-gradient(ellipse 95% 96% at 50% 100%, #000 65%, transparent 100%);
+  mask-image: radial-gradient(ellipse 95% 96% at 50% 100%, #000 65%, transparent 100%);
+  vertical-align: bottom;
+  display: block;
+}
+
 /* Monogram Watermark */
 .monogram-watermark {
   position: absolute;
