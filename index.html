@@ -674,13 +674,16 @@
         <!-- Right: Showroom Visuals -->
         <div class="lg:col-span-5 relative reveal-on-scroll">
           <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-[#D4AF37]/40 aspect-[4/5] bg-walnut/20 group">
-            <img 
-              src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=1000&q=80" 
-              alt="Standard Gold &amp; Diamonds Showroom Interior Payyavoor" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              onerror="this.src='assets/images/placeholder-jewelry.svg'"
-              loading="lazy"
-            >
+            <picture class="w-full h-full block">
+              <source media="(max-width: 640px)" srcset="assets/images/showroom-portrait.jpg">
+              <img 
+                src="assets/images/showroom-portrait.jpg" 
+                alt="Standard Gold &amp; Diamonds Showroom Interior Payyavoor" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                onerror="this.src='assets/images/showroom-landscape.jpg'"
+                loading="lazy"
+              >
+            </picture>
             <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent"></div>
             
             <div class="absolute bottom-6 left-6 right-6">
@@ -775,7 +778,10 @@
         </div>
 
         <div class="gallery-item group relative rounded-xl overflow-hidden aspect-square cursor-pointer border border-royalGold/20 hover:border-royalGold transition-all duration-300 reveal-on-scroll" data-category="showroom" data-title="Standard Gold &amp; Diamonds Boutique Interior">
-          <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=800&q=80" alt="SFJ Showroom Interior Payyavoor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+          <picture class="w-full h-full block">
+            <source media="(max-width: 640px)" srcset="assets/images/showroom-portrait.jpg">
+            <img src="assets/images/showroom-landscape.jpg" alt="SFJ Showroom Interior Payyavoor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+          </picture>
           <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
             <span class="text-xs text-royalGold font-medium">Showroom</span>
             <p class="font-serif text-sm font-bold text-softWhite">Payyavoor Boutique</p>
