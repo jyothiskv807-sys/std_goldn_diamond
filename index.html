@@ -130,7 +130,6 @@
           <a href="#collections" class="nav-link text-sm font-medium text-[#EDE8DC]/80 hover:text-lightGold transition py-1">Collections</a>
           <a href="#bridal" class="nav-link text-sm font-medium text-[#EDE8DC]/80 hover:text-lightGold transition py-1">Bridal Suite</a>
           <a href="#about" class="nav-link text-sm font-medium text-[#EDE8DC]/80 hover:text-lightGold transition py-1">Our Story</a>
-          <a href="#gallery" class="nav-link text-sm font-medium text-[#EDE8DC]/80 hover:text-lightGold transition py-1">Gallery</a>
           <a href="#why-us" class="nav-link text-sm font-medium text-[#EDE8DC]/80 hover:text-lightGold transition py-1">Why SFJ</a>
           <a href="#visit-us" class="nav-link text-sm font-medium text-[#EDE8DC]/80 hover:text-lightGold transition py-1">Visit Showroom</a>
         </nav>
@@ -192,7 +191,6 @@
         <a href="#collections" class="mobile-nav-link text-base font-medium text-softWhite hover:text-lightGold transition">Collections</a>
         <a href="#bridal" class="mobile-nav-link text-base font-medium text-softWhite hover:text-lightGold transition">Bridal Suite</a>
         <a href="#about" class="mobile-nav-link text-base font-medium text-softWhite hover:text-lightGold transition">Our Story</a>
-        <a href="#gallery" class="mobile-nav-link text-base font-medium text-softWhite hover:text-lightGold transition">Gallery</a>
         <a href="#why-us" class="mobile-nav-link text-base font-medium text-softWhite hover:text-lightGold transition">Why Choose SFJ</a>
         <a href="#visit-us" class="mobile-nav-link text-base font-medium text-softWhite hover:text-lightGold transition">Showroom Location &amp; Map</a>
       </nav>
@@ -501,7 +499,7 @@
 
           <div class="flex-shrink-0 w-72 sm:w-80 bg-white rounded-xl overflow-hidden shadow-md border border-royalGold/20 group">
             <div class="aspect-[4/3] overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1611591475155-42848cb6a2aa?auto=format&fit=crop&w=600&q=80" alt="Bangles &amp; Kadas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+              <img src="assets/images/bangles.jpg" alt="Bangles &amp; Kadas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
             </div>
             <div class="p-5 space-y-2">
               <h4 class="font-serif font-bold text-lg text-charcoal">Bangles &amp; Antique Kadas</h4>
@@ -559,7 +557,7 @@
             
             <div class="relative rounded-2xl overflow-hidden border border-royalGold/60 shadow-2xl bg-darkBg aspect-[4/5] zoom-frame">
               <img 
-                src="https://images.unsplash.com/photo-1611591475155-42848cb6a2aa?auto=format&fit=crop&w=1000&q=80" 
+                src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1000&q=80" 
                 alt="Kerala Bride in Wedding Gold &amp; Diamond Jewellery - Standard Gold &amp; Diamonds Payyavoor" 
                 class="w-full h-full object-cover object-top"
                 onerror="this.src='assets/images/placeholder-jewelry.svg'"
@@ -702,141 +700,7 @@
   </section>
 
 
-  <!-- ==================== 7. GALLERY & LIGHTBOX (DARK) ==================== -->
-  <section id="gallery" class="py-20 md:py-28 dark-canvas relative z-20 border-t border-mutedGold/40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3 reveal-on-scroll">
-        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-softWhite tracking-tight">
-          Curated Gallery
-        </h2>
-        <div class="gold-divider w-20 mx-auto"></div>
-        <p class="text-sm sm:text-base text-[#EDE8DC]/80 font-light pt-2">
-          Select any ornament to inspect in full detail or enquire directly on WhatsApp.
-        </p>
-      </div>
-
-      <!-- Category Filter Pills -->
-      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
-        <button class="gallery-filter-btn px-5 py-2 rounded-full text-xs font-semibold uppercase border border-royalGold bg-royalGold text-darkBg transition" data-filter="all">All</button>
-        <button class="gallery-filter-btn px-5 py-2 rounded-full text-xs font-medium uppercase border border-mutedGold text-softWhite/70 hover:border-royalGold hover:text-lightGold transition" data-filter="gold">Gold</button>
-        <button class="gallery-filter-btn px-5 py-2 rounded-full text-xs font-medium uppercase border border-mutedGold text-softWhite/70 hover:border-royalGold hover:text-lightGold transition" data-filter="diamond">Diamond</button>
-        <button class="gallery-filter-btn px-5 py-2 rounded-full text-xs font-medium uppercase border border-mutedGold text-softWhite/70 hover:border-royalGold hover:text-lightGold transition" data-filter="bridal">Bridal</button>
-        <button class="gallery-filter-btn px-5 py-2 rounded-full text-xs font-medium uppercase border border-mutedGold text-softWhite/70 hover:border-royalGold hover:text-lightGold transition" data-filter="showroom">Showroom</button>
-      </div>
-
-      <!-- Masonry Gallery Grid -->
-      <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-        
-        <div class="gallery-item group relative rounded-xl overflow-hidden aspect-square cursor-pointer border border-royalGold/20 hover:border-royalGold transition-all duration-300 reveal-on-scroll" data-category="bridal" data-title="Royal Bridal Kasumala Suite">
-          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Royal Bridal Kasumala Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-            <span class="text-xs text-royalGold font-medium">Bridal</span>
-            <p class="font-serif text-sm font-bold text-softWhite">Royal Kasumala Suite</p>
-          </div>
-        </div>
-
-        <div class="gallery-item group relative rounded-xl overflow-hidden aspect-square cursor-pointer border border-royalGold/20 hover:border-royalGold transition-all duration-300 reveal-on-scroll" data-category="diamond" data-title="Brilliant Solitaire Ring">
-          <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80" alt="Brilliant Solitaire Ring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-            <span class="text-xs text-royalGold font-medium">Diamond</span>
-            <p class="font-serif text-sm font-bold text-softWhite">Brilliant Solitaire Ring</p>
-          </div>
-        </div>
-
-        <div class="gallery-item group relative rounded-xl overflow-hidden aspect-square cursor-pointer border border-royalGold/20 hover:border-royalGold transition-all duration-300 reveal-on-scroll" data-category="gold" data-title="Antique Heritage Choker">
-          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80" alt="Antique Heritage Choker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-            <span class="text-xs text-royalGold font-medium">Gold</span>
-            <p class="font-serif text-sm font-bold text-softWhite">Antique Heritage Choker</p>
-          </div>
-        </div>
-
-        <div class="gallery-item group relative rounded-xl overflow-hidden aspect-square cursor-pointer border border-royalGold/20 hover:border-royalGold transition-all duration-300 reveal-on-scroll" data-category="bridal" data-title="Traditional Temple Jhumkas">
-          <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=800&q=80" alt="Traditional Temple Jhumkas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-            <span class="text-xs text-royalGold font-medium">Bridal</span>
-            <p class="font-serif text-sm font-bold text-softWhite">Temple Jhumkas</p>
-          </div>
-        </div>
-
-        <div class="gallery-item group relative rounded-xl overflow-hidden aspect-square cursor-pointer border border-royalGold/20 hover:border-royalGold transition-all duration-300 reveal-on-scroll" data-category="gold" data-title="Handcrafted Filigree Bangles">
-          <img src="https://images.unsplash.com/photo-1611591475155-42848cb6a2aa?auto=format&fit=crop&w=800&q=80" alt="Handcrafted Filigree Bangles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-            <span class="text-xs text-royalGold font-medium">Gold</span>
-            <p class="font-serif text-sm font-bold text-softWhite">Filigree Bangles</p>
-          </div>
-        </div>
-
-        <div class="gallery-item group relative rounded-xl overflow-hidden aspect-square cursor-pointer border border-royalGold/20 hover:border-royalGold transition-all duration-300 reveal-on-scroll" data-category="diamond" data-title="Emerald &amp; Diamond Cocktail Necklace">
-          <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=800&q=80" alt="Emerald &amp; Diamond Cocktail Necklace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-            <span class="text-xs text-royalGold font-medium">Diamond</span>
-            <p class="font-serif text-sm font-bold text-softWhite">Diamond Cocktail Suite</p>
-          </div>
-        </div>
-
-        <div class="gallery-item group relative rounded-xl overflow-hidden aspect-square cursor-pointer border border-royalGold/20 hover:border-royalGold transition-all duration-300 reveal-on-scroll" data-category="showroom" data-title="Standard Gold &amp; Diamonds Boutique Interior">
-          <picture class="w-full h-full block">
-            <source media="(max-width: 640px)" srcset="assets/images/showroom-portrait.jpg">
-            <img src="assets/images/showroom-landscape.jpg" alt="SFJ Showroom Interior Payyavoor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
-          </picture>
-          <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-            <span class="text-xs text-royalGold font-medium">Showroom</span>
-            <p class="font-serif text-sm font-bold text-softWhite">Payyavoor Boutique</p>
-          </div>
-        </div>
-
-        <div class="gallery-item group relative rounded-xl overflow-hidden aspect-square cursor-pointer border border-royalGold/20 hover:border-royalGold transition-all duration-300 reveal-on-scroll" data-category="bridal" data-title="Grand South Indian Wedding Ensemble">
-          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Grand South Indian Wedding Ensemble" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-            <span class="text-xs text-royalGold font-medium">Bridal</span>
-            <p class="font-serif text-sm font-bold text-softWhite">Bridal Ensemble</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Instagram Follow CTA -->
-      <div class="mt-12 text-center">
-        <a href="https://instagram.com/sfj__gold" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-7 py-3 rounded-full border border-royalGold text-lightGold hover:bg-royalGold hover:text-darkBg transition font-medium text-xs tracking-wider uppercase">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-          <span>Follow us on Instagram @sfj__gold</span>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Interactive Lightbox Modal -->
-  <div id="galleryLightbox" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Jewellery Lightbox View">
-    <button id="closeLightboxBtn" class="absolute top-6 right-6 text-royalGold hover:text-white p-2 text-2xl z-20" aria-label="Close Lightbox">✕</button>
-    
-    <button id="prevLightboxBtn" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-royalGold/40 bg-darkBg/80 text-lightGold hover:bg-royalGold hover:text-darkBg transition flex items-center justify-center text-xl z-20" aria-label="Previous Image">‹</button>
-    <button id="nextLightboxBtn" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-royalGold/40 bg-darkBg/80 text-lightGold hover:bg-royalGold hover:text-darkBg transition flex items-center justify-center text-xl z-20" aria-label="Next Image">›</button>
-
-    <div class="relative max-w-3xl w-full bg-[#12110e] rounded-2xl overflow-hidden border border-royalGold/40 shadow-2xl flex flex-col max-h-[90vh]">
-      <div class="relative flex-1 overflow-hidden bg-black flex items-center justify-center min-h-[300px]">
-        <img id="lightboxImg" src="" alt="Enlarged Jewellery Piece" class="max-h-[65vh] w-auto max-w-full object-contain">
-      </div>
-      <div class="p-6 bg-darkBg border-t border-mutedGold/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div>
-          <span id="lightboxCategory" class="text-xs text-royalGold font-medium block">Category</span>
-          <h3 id="lightboxTitle" class="font-serif text-xl font-bold text-softWhite">Design Name</h3>
-          <p class="text-xs text-[#EDE8DC]/60 mt-0.5">Standard Gold &amp; Diamonds • Payyavoor</p>
-        </div>
-        <a id="lightboxWhatsAppBtn" href="#" target="_blank" rel="noopener noreferrer" class="gold-gradient-bg px-6 py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase flex items-center gap-2 whitespace-nowrap shadow-md">
-          <span>Enquire for this Piece</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- ==================== 8. WHY CHOOSE US (DARK) ==================== -->
+  <!-- ==================== 7. WHY CHOOSE US (DARK) ==================== -->
   <section id="why-us" class="py-20 md:py-24 bg-[#0d0d0d] relative z-20 border-t border-mutedGold/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -892,6 +756,16 @@
           </p>
         </div>
 
+      </div>
+
+      <!-- Instagram Follow CTA -->
+      <div class="mt-12 text-center reveal-on-scroll">
+        <a href="https://instagram.com/sfj__gold" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-7 py-3 rounded-full border border-royalGold text-lightGold hover:bg-royalGold hover:text-darkBg transition font-medium text-xs tracking-wider uppercase">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span>Follow us on Instagram @sfj__gold</span>
+        </a>
       </div>
 
     </div>
@@ -1040,7 +914,6 @@
         <li><a href="#collections" class="hover:text-lightGold transition">Gold &amp; Diamond Collections</a></li>
         <li><a href="#bridal" class="hover:text-lightGold transition">Bespoke Bridal Suite</a></li>
         <li><a href="#about" class="hover:text-lightGold transition">Our Story</a></li>
-        <li><a href="#gallery" class="hover:text-lightGold transition">Curated Gallery</a></li>
         <li><a href="#why-us" class="hover:text-lightGold transition">Why Choose SFJ Payyavoor</a></li>
         <li><a href="#visit-us" class="hover:text-lightGold transition">Showroom Location &amp; Map</a></li>
       </ul>
