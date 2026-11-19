@@ -227,31 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowLeft') showPrevLightboxItem();
   });
 
-  // 7. Interactive WhatsApp Enquiry Builder Form
-  const enquiryForm = document.getElementById('jewelleryEnquiryForm');
-  if (enquiryForm) {
-    enquiryForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('enquiryName').value.trim();
-      const phone = document.getElementById('enquiryPhone').value.trim();
-      const category = document.getElementById('enquiryCategory').value;
-      const budget = document.getElementById('enquiryBudget').value;
-      const message = document.getElementById('enquiryMessage').value.trim();
-
-      let text = `*New Jewellery Enquiry - Standard Gold & Diamonds (Payyavoor)*\n\n`;
-      text += `👤 *Customer Name:* ${name || 'Valued Customer'}\n`;
-      if (phone) text += `📞 *Phone Number:* ${phone}\n`;
-      text += `✨ *Interested In:* ${category}\n`;
-      if (budget) text += `💰 *Preferred Budget/Weight:* ${budget}\n`;
-      if (message) text += `📝 *Notes/Requirements:* ${message}\n\n`;
-      text += `_Sent via standardgold.in landing page_`;
-
-      const encoded = encodeURIComponent(text);
-      window.open(`https://wa.me/919447251916?text=${encoded}`, '_blank');
-    });
-  }
-
-  // 8. Malayalam Language Accent Toggle
+  // 7. Malayalam Language Accent Toggle
   const langToggleBtn = document.getElementById('langToggleBtn');
   const mlElements = document.querySelectorAll('.lang-ml');
   let isMalayalamActive = false;
