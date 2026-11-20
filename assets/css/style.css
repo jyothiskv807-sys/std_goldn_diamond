@@ -164,6 +164,16 @@ img, iframe, video {
   background-clip: text;
 }
 
+/* Testimonial carousel track */
+#testimonialCarousel {
+  touch-action: pan-y;
+  user-select: none;
+  cursor: grab;
+}
+#testimonialCarousel:active {
+  cursor: grabbing;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

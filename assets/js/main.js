@@ -96,18 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const carouselContainer = document.getElementById('testimonialCarousel');
   const prevBtn = document.getElementById('prevTestimonialBtn');
   const nextBtn = document.getElementById('nextTestimonialBtn');
-  const dots = document.querySelectorAll('.testimonial-dot');
   let currentSlide = 0;
 
-  function goToSlide(slideIndex) {
-    if (!carouselContainer) return;
-    const slides = carouselContainer.children;
-    const totalSlides = slides.length || 2;
-    currentSlide = (slideIndex + totalSlides) % totalSlides;
-    
-    carouselContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-    
-    dots.forEach((dot, idx) => {
+  function updateDots() {
+    const allDots = document.querySelectorAll('.testimonial-dot');
+    allDots.forEach((dot, idx) => {
       if (idx === currentSlide) {
         dot.classList.add('bg-[#D4AF37]', 'w-7');
         dot.classList.remove('bg-[#3A3320]', 'w-2.5');
@@ -118,11 +111,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  let testimonialInterval = setInterval(() => goToSlide(currentSlide + 1), 7000);
+  function goToSlide(slideIndex) {
+    if (!carouselContainer) return;
+    const slides = carouselContainer.children;
+    const totalSlides = slides.length || 1;
+    currentSlide = (slideIndex + totalSlides) % totalSlides;
+    
+    carouselContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    updateDots();
+  }
+
+  let testimonialInterval = setInterval(() => goToSlide(currentSlide + 1), 6500);
 
   function resetTestimonialTimer() {
     clearInterval(testimonialInterval);
-    testimonialInterval = setInterval(() => goToSlide(currentSlide + 1), 7000);
+    testimonialInterval = setInterval(() => goToSlide(currentSlide + 1), 6500);
   }
 
   window.sfjGoToSlide = (idx) => { goToSlide(idx); resetTestimonialTimer(); };
@@ -141,32 +144,74 @@ document.addEventListener('DOMContentLoaded', () => {
       window.sfjNextSlide();
     });
   }
-  dots.forEach(dot => {
-    dot.addEventListener('click', (e) => {
+
+  // Delegate dot clicks
+  document.addEventListener('click', (e) => {
+    const dot = e.target.closest('.testimonial-dot');
+    if (dot) {
       e.preventDefault();
       const slide = parseInt(dot.getAttribute('data-slide') || '0', 10);
       window.sfjGoToSlide(slide);
-    });
+    }
   });
 
-  // Touch Swipe Support for Mobile
+  // Smooth Mobile Touch & Desktop Pointer Swipe
   if (carouselContainer) {
-    let touchStartX = 0;
-    let touchEndX = 0;
+    let startX = 0;
+    let startY = 0;
+    let isTracking = false;
+
+    // Mobile Touch Events
     carouselContainer.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
+      if (!e.touches || e.touches.length === 0) return;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isTracking = true;
     }, { passive: true });
-    carouselContainer.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      const diff = touchStartX - touchEndX;
-      if (Math.abs(diff) > 40) {
-        if (diff > 0) {
+
+    carouselContainer.addEventListener('touchmove', (e) => {
+      if (!isTracking || !e.touches || e.touches.length === 0) return;
+      const currentX = e.touches[0].clientX;
+      const currentY = e.touches[0].clientY;
+      const diffX = startX - currentX;
+      const diffY = startY - currentY;
+
+      // When horizontal swipe is intentional and exceeds 35px
+      if (Math.abs(diffX) > 35 && Math.abs(diffX) > Math.abs(diffY)) {
+        isTracking = false;
+        if (diffX > 0) {
           window.sfjNextSlide();
         } else {
           window.sfjPrevSlide();
         }
       }
     }, { passive: true });
+
+    carouselContainer.addEventListener('touchend', () => {
+      isTracking = false;
+    }, { passive: true });
+
+    // Desktop Mouse Drag Support
+    let mouseStartX = 0;
+    let isMouseDown = false;
+
+    carouselContainer.addEventListener('mousedown', (e) => {
+      isMouseDown = true;
+      mouseStartX = e.clientX;
+    });
+
+    window.addEventListener('mouseup', (e) => {
+      if (!isMouseDown) return;
+      isMouseDown = false;
+      const diffX = mouseStartX - e.clientX;
+      if (Math.abs(diffX) > 40) {
+        if (diffX > 0) {
+          window.sfjNextSlide();
+        } else {
+          window.sfjPrevSlide();
+        }
+      }
+    });
   }
 
   const testimonialSection = document.getElementById('testimonials');
