@@ -12,41 +12,18 @@
   --divider-gold: #3A3320;
 }
 
-/* Base typography & Root Scaling (Optimized for Readability across Mobile & Desktop) */
+/* ==================== 1. BASE TYPOGRAPHY & ROOT SCALING ==================== */
+/* 16px font-size everywhere (removed 640px/1024px/1440px steps) */
 html {
   font-size: 16px;
   max-width: 100%;
   overflow-x: clip;
 }
 
-@media (min-width: 400px) {
-  html {
-    font-size: 16.5px;
-  }
-}
-
-@media (min-width: 640px) {
-  html {
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 1024px) {
-  html {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 1440px) {
-  html {
-    font-size: 21.5px;
-  }
-}
-
 body {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  color: var(--text-dark);
-  background-color: var(--bg-dark);
+  color: var(--text-light);
+  background-color: var(--bg-light);
   max-width: 100%;
   overflow-x: clip;
   scroll-behavior: smooth;
@@ -54,115 +31,47 @@ body {
   line-height: 1.65;
 }
 
-/* Prevent iOS input auto-zoom (requires 16px font-size) */
-@media (max-width: 1023px) {
-  input[type="text"],
-  input[type="search"] {
-    font-size: 16px !important;
-  }
+/* Headings scaled elegantly with clamp() */
+h1, .font-heading-hero {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+  line-height: 1.15;
 }
 
-/* Ensure images & embeds never overflow */
+h2, .font-heading-section {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.2;
+}
+
+h3, .font-heading-card {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  line-height: 1.3;
+}
+
+h4, .font-serif {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+}
+
+/* Text limits for luxury editorial breathing room */
+.max-w-prose-clean {
+  max-width: 60ch;
+}
+
+/* Ensure images & media never overflow */
 img, iframe, video {
   max-width: 100%;
   height: auto;
 }
 
-h1, h2, h3, h4, .font-serif {
-  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-}
+/* ==================== 2. CALM LUXURY ANIMATIONS ==================== */
 
-/* Metallic Gold Gradients */
-.gold-gradient-text {
-  background: linear-gradient(135deg, #F1D77A 0%, #D4AF37 50%, #A67C00 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gold-gradient-bg {
-  background: linear-gradient(135deg, #A67C00 0%, #F1D77A 50%, #D4AF37 100%);
-  color: #0A0A0A;
-  font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.gold-gradient-bg:hover {
-  background: linear-gradient(135deg, #D4AF37 0%, #FFF2B2 50%, #F1D77A 100%);
-  box-shadow: 0 4px 25px rgba(212, 175, 55, 0.4);
-  transform: translateY(-1px);
-}
-
-.gold-border {
-  border: 1px solid rgba(212, 175, 55, 0.3);
-}
-
-.gold-border-subtle {
-  border: 1px solid rgba(212, 175, 55, 0.15);
-}
-
-/* Elegant Section Dividers */
-.gold-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, #A67C00 20%, #F1D77A 50%, #D4AF37 80%, transparent 100%);
-  opacity: 0.5;
-}
-
-/* Background Atmosphere */
-.dark-canvas {
-  background-color: #0A0A0A;
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(90, 58, 34, 0.15) 0%, transparent 55%),
-    radial-gradient(circle at 100% 40%, rgba(166, 124, 0, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 0% 100%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
-}
-
-.ivory-canvas {
-  background-color: #FAF6EC;
-  color: #1C1C1C;
-  background-image: 
-    radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(90, 58, 34, 0.03) 0%, transparent 40%);
-}
-
-/* Walnut accents */
-.bg-walnut {
-  background-color: #5A3A22;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0A0A0A;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #3A3320;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #A67C00;
-}
-
-/* Horizontal scroll styling */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Fade up animation on scroll */
+/* Soft fade-in on scroll */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(12px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -171,660 +80,117 @@ h1, h2, h3, h4, .font-serif {
   transform: translateY(0);
 }
 
-/* Respect user motion preference */
+/* Gentle image zoom on hover (scale 1.03) */
+.zoom-frame {
+  overflow: hidden;
+}
+
+.zoom-frame img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.zoom-frame:hover img {
+  transform: scale(1.03);
+}
+
+/* ==================== 3. BUTTONS & INTERACTION STYLES ==================== */
+
+/* Flat #D4AF37 for primary buttons */
+.btn-gold {
+  background-color: #D4AF37;
+  color: #0A0A0A;
+  font-weight: 600;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.btn-gold:hover {
+  background-color: #A67C00;
+  color: #FFFFFF;
+}
+
+/* Thin 1px border for secondary buttons */
+.btn-outline-gold {
+  border: 1px solid #D4AF37;
+  color: #F1D77A;
+  background-color: transparent;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-outline-gold:hover {
+  background-color: rgba(212, 175, 55, 0.12);
+  color: #FAF6EC;
+  border-color: #F1D77A;
+}
+
+.btn-outline-dark {
+  border: 1px solid rgba(28, 28, 28, 0.25);
+  color: #1C1C1C;
+  background-color: transparent;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-outline-dark:hover {
+  background-color: #0A0A0A;
+  color: #FAF6EC;
+  border-color: #0A0A0A;
+}
+
+/* Understated Navigation Link Underline */
+.nav-link {
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: #D4AF37;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Gold Gradient Text accent */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F1D77A 0%, #D4AF37 50%, #A67C00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3A3320;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* ==================== 4. ACCESSIBILITY & MOTION PREFERENCES ==================== */
 @media (prefers-reduced-motion: reduce) {
   .reveal-on-scroll {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
   }
-  .gold-gradient-bg {
-    transition: none !important;
-  }
-}
-
-/* Image framing */
-.zoom-frame {
-  overflow: hidden;
-}
-
-.zoom-frame img {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.zoom-frame:hover img {
-  transform: scale(1.04);
-}
-
-/* ==================== LUXURY ANIMATIONS & HOVER MICRO-INTERACTIONS ==================== */
-
-/* Floating animations */
-@keyframes float-slow {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-7px); }
-}
-@keyframes float-delayed {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(7px); }
-}
-.animate-float-slow {
-  animation: float-slow 5s ease-in-out infinite;
-}
-.animate-float-delayed {
-  animation: float-delayed 6s ease-in-out infinite 1s;
-}
-
-/* Gold pulse glow */
-@keyframes gold-pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.45);
-  }
-  50% {
-    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
-  }
-}
-.pulse-gold {
-  animation: gold-pulse 3s infinite;
-}
-
-/* WhatsApp pulse ring */
-@keyframes pulse-ring {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.3);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-}
-.pulse-ring-effect {
-  position: relative;
-}
-.pulse-ring-effect::before {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  background: rgba(37, 211, 102, 0.4);
-  animation: pulse-ring 2.5s infinite;
-  z-index: -1;
-}
-
-/* Sheen sweep animation for CTAs */
-.sheen-btn {
-  position: relative;
-  overflow: hidden;
-}
-.sheen-btn::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -150%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    60deg,
-    transparent 20%,
-    rgba(255, 255, 255, 0.35) 50%,
-    transparent 80%
-  );
-  transform: rotate(25deg);
-  transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-}
-.sheen-btn:hover::after {
-  left: 150%;
-}
-
-/* Collection & Product Card Hover Elevation */
-.hover-elevate {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.hover-elevate:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 22px 45px -12px rgba(212, 175, 55, 0.22), 0 0 25px rgba(212, 175, 55, 0.08);
-  border-color: rgba(212, 175, 55, 0.7);
-}
-
-/* Horizontal Spotlight Card Hover */
-.spotlight-card-hover {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.spotlight-card-hover:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.15), 0 0 20px rgba(212, 175, 55, 0.15);
-  border-color: rgba(212, 175, 55, 0.6);
-}
-
-/* Luxury Feature Card Hover (Dark Canvas) */
-.luxury-card-hover {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease;
-}
-.luxury-card-hover::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #F1D77A, #D4AF37, transparent);
-  transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.luxury-card-hover:hover::before {
-  left: 100%;
-}
-.luxury-card-hover:hover {
-  transform: translateY(-6px);
-  background-color: #1a1814;
-  border-color: rgba(212, 175, 55, 0.6);
-  box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.85), 0 0 25px rgba(212, 175, 55, 0.15);
-}
-.luxury-card-hover:hover .icon-box {
-  transform: scale(1.15) rotate(4deg);
-  background-color: rgba(212, 175, 55, 0.25);
-  border-color: rgba(212, 175, 55, 0.8);
-}
-
-/* Icon Box transition */
-.icon-box {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, border-color 0.4s ease;
-}
-
-/* Animated Navigation Link Underline */
-.nav-link-animated {
-  position: relative;
-  transition: color 0.3s ease;
-}
-.nav-link-animated::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #F1D77A, #D4AF37);
-  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  border-radius: 2px;
-}
-.nav-link-animated:hover::after,
-.nav-link-animated.active::after {
-  width: 100%;
-  left: 0;
-}
-
-/* Footer Link Slide Hover */
-.footer-link-hover {
-  display: inline-flex;
-  align-items: center;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
-}
-.footer-link-hover:hover {
-  transform: translateX(5px);
-  color: #F1D77A;
-}
-
-/* Instagram Follow Pill Hover */
-.insta-pill {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.insta-pill:hover {
-  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-  color: #ffffff;
-  border-color: transparent;
-  box-shadow: 0 10px 30px rgba(253, 29, 29, 0.35);
-  transform: translateY(-2px) scale(1.02);
-}
-
-/* Interactive Badge Hover */
-.badge-interactive {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-}
-.badge-interactive:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
-}
-
-/* ==================== REDESIGNED LUXURY STOREFRONT STYLES ==================== */
-
-/* Header Search Input & Dropdown */
-.search-input-pill {
-  background: #14120E;
-  border: 1px solid #3A3320;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.search-input-pill:focus-within {
-  border-color: #D4AF37;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
-  background: #1A1713;
-}
-
-#searchDropdown {
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-/* Category Nav Active Underline */
-.category-nav-link {
-  position: relative;
-  transition: color 0.3s ease;
-}
-.category-nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #D4AF37;
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.category-nav-link:hover::after,
-.category-nav-link.active::after {
-  width: 100%;
-}
-
-/* Promo Banner Walnut Gradient & Floating Cutout */
-.promo-walnut-banner {
-  background: linear-gradient(135deg, #1C120B 0%, #3D2513 55%, #1C120B 100%) !important;
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  box-shadow: 0 20px 45px rgba(10, 10, 10, 0.6);
-  color: #FAF6EC;
-}
-
-.floating-macro-ring {
-  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.75));
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.promo-walnut-banner:hover .floating-macro-ring {
-  transform: translateY(-8px) scale(1.04) rotate(-2deg);
-}
-
-/* Category Clean Tile */
-.category-clean-tile {
-  background: #FFFFFF;
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.category-clean-tile:hover {
-  transform: translateY(-6px);
-  border-color: #A67C00;
-  box-shadow: 0 16px 32px -8px rgba(90, 58, 34, 0.2);
-}
-.category-clean-tile img {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.category-clean-tile:hover img {
-  transform: scale(1.08);
-}
-.category-clean-tile:hover h4 {
-  color: #5A3A22 !important;
-}
-
-/* Curated Category Filter Tabs */
-.curated-tab-btn {
-  position: relative;
-  transition: all 0.3s ease;
-  color: #5A3A22;
-}
-.curated-tab-btn::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: #A67C00;
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.curated-tab-btn.active {
-  color: #1C1C1C;
-  font-weight: 600;
-}
-.curated-tab-btn.active::after {
-  width: 100%;
-  left: 0;
-  background: #D4AF37;
-  height: 3px;
-}
-
-/* Portrait Lifestyle Editorial Card */
-.portrait-lifestyle-card {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-.portrait-lifestyle-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.35);
-}
-.portrait-lifestyle-card img {
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.portrait-lifestyle-card:hover img {
-  transform: scale(1.05);
-}
-
-/* Pre-Footer Warm Gold Gradient Card */
-.prefooter-gradient-card {
-  background: linear-gradient(135deg, #FAF6EC 0%, #F5EBD6 50%, #EAD7B0 100%);
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
-}
-
-/* Monogram Watermark */
-.monogram-watermark {
-  position: absolute;
-  right: -2%;
-  bottom: -5%;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(140px, 20vw, 280px);
-  font-weight: 700;
-  line-height: 1;
-  color: #14120E;
-  opacity: 0.35;
-  pointer-events: none;
-  user-select: none;
-  letter-spacing: -0.05em;
-  overflow: hidden;
-}
-
-@media (max-width: 1023px) {
-  .monogram-watermark {
-    font-size: 8rem;
-    right: 0.5rem;
-    bottom: 4rem;
-    opacity: 0.2;
-  }
-}
-
-/* Respect user motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .animate-float-slow,
-  .animate-float-delayed,
-  .pulse-gold,
-  .pulse-ring-effect::before,
-  .preloader-shimmer {
-    animation: none !important;
-  }
-  .hover-elevate:hover,
-  .spotlight-card-hover:hover,
-  .luxury-card-hover:hover {
+  .zoom-frame:hover img {
     transform: none !important;
-  }
-}
-
-/* ==================== LUXURY BRAND PRELOADER ==================== */
-@keyframes goldShimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.preloader-shimmer {
-  background: linear-gradient(90deg, #D4AF37 0%, #FFF5D0 30%, #D4AF37 60%, #F1D77A 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: goldShimmer 3s ease-in-out infinite;
-}
-
-/* ==================== UNIVERSAL HOVER & CLICK MICRO-ANIMATIONS ==================== */
-
-/* 1. Universal Touch & Active Click Compression */
-button,
-a,
-.curated-tab-btn,
-.category-clean-tile,
-.portrait-lifestyle-card,
-#new-arrivals article {
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Tactile press-down effect on click/touch */
-button:active:not(:disabled),
-a.sheen-btn:active,
-a.gold-gradient-bg:active,
-a.rounded-md:active,
-a.rounded-full:active,
-a.rounded-xl:active,
-.curated-tab-btn:active,
-.copy-phone-btn:active,
-#mobileMenuBtn:active,
-#closeMobileMenuBtn:active {
-  transform: scale(0.95) translateY(0) !important;
-  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-/* 2. Interactive Button Lift & Gold Glow on Hover */
-a.gold-gradient-bg,
-a.sheen-btn,
-a.rounded-md,
-a.rounded-full,
-a.rounded-xl,
-button.rounded-md,
-button.rounded-full,
-button.rounded-xl,
-.copy-phone-btn {
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
-              background-color 0.25s ease, 
-              border-color 0.25s ease, 
-              color 0.25s ease;
-}
-
-a.gold-gradient-bg:hover,
-a.sheen-btn:hover,
-a.rounded-md:hover,
-a.rounded-full:hover,
-a.rounded-xl:hover,
-button.rounded-md:hover,
-button.rounded-full:hover,
-.copy-phone-btn:hover {
-  transform: translateY(-2.5px);
-  box-shadow: 0 8px 24px -4px rgba(212, 175, 55, 0.38);
-}
-
-/* 3. Signature Boutique Arrival Product Cards (Hover Lift & Active State) */
-#new-arrivals article {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-              border-color 0.35s ease;
-  cursor: pointer;
-}
-#new-arrivals article:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 20px 38px -10px rgba(0, 0, 0, 0.18), 0 0 22px rgba(212, 175, 55, 0.2);
-  border-color: #D4AF37;
-}
-#new-arrivals article:active {
-  transform: scale(0.985) translateY(-3px);
-}
-#new-arrivals article img {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-#new-arrivals article:hover img {
-  transform: scale(1.06);
-}
-
-/* 4. Category Clean Tiles (Hover Elevation & Zoom) */
-.category-clean-tile {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-              border-color 0.35s ease;
-}
-.category-clean-tile:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 18px 36px -8px rgba(90, 58, 34, 0.24), 0 0 20px rgba(212, 175, 55, 0.18);
-  border-color: #A67C00;
-}
-.category-clean-tile:active {
-  transform: scale(0.96) translateY(0);
-}
-.category-clean-tile img {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.category-clean-tile:hover img {
-  transform: scale(1.08);
-}
-
-/* 5. Curated Tab Buttons (Smooth Hover Lift & Press) */
-.curated-tab-btn {
-  transition: color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.curated-tab-btn:hover {
-  color: #1C1C1C;
-  transform: translateY(-1.5px);
-}
-.curated-tab-btn:active {
-  transform: scale(0.95);
-}
-
-/* 6. Curated Lifestyle Cards */
-.portrait-lifestyle-card {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.4s ease;
-  cursor: pointer;
-}
-.portrait-lifestyle-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 22px 42px -10px rgba(0, 0, 0, 0.55), 0 0 25px rgba(212, 175, 55, 0.25);
-}
-.portrait-lifestyle-card:active {
-  transform: scale(0.975) translateY(-3px);
-}
-.portrait-lifestyle-card img {
-  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.portrait-lifestyle-card:hover img {
-  transform: scale(1.06);
-}
-
-/* 7. Testimonial Carousel Controls (Hover Glow & Active Spring) */
-#prevTestimonialBtn,
-#nextTestimonialBtn {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
-              background-color 0.25s ease, 
-              border-color 0.25s ease, 
-              box-shadow 0.25s ease;
-}
-#prevTestimonialBtn:hover,
-#nextTestimonialBtn:hover {
-  transform: scale(1.12);
-  box-shadow: 0 0 16px rgba(212, 175, 55, 0.45);
-}
-#prevTestimonialBtn:active,
-#nextTestimonialBtn:active {
-  transform: scale(0.9);
-}
-
-.testimonial-dot {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.testimonial-dot:hover {
-  transform: scale(1.25);
-}
-
-/* 8. Navigation Links (Secondary Nav & Swipeable Strip) */
-.category-nav-link {
-  transition: color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.category-nav-link:hover {
-  transform: translateY(-1px);
-}
-.category-nav-link:active {
-  transform: scale(0.95);
-}
-
-#mainHeader .overflow-x-auto a {
-  transition: color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-#mainHeader .overflow-x-auto a:hover {
-  transform: translateY(-1px);
-}
-#mainHeader .overflow-x-auto a:active {
-  transform: scale(0.94);
-}
-
-/* 9. Mobile Sticky Bottom Bar Buttons */
-aside[aria-label="Mobile Quick Actions"] a {
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
-}
-aside[aria-label="Mobile Quick Actions"] a:active {
-  transform: scale(0.93) !important;
-}
-
-/* 10. Desktop Floating WhatsApp Button */
-.fixed.bottom-6.right-6 a > div {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-}
-.fixed.bottom-6.right-6 a:hover > div {
-  transform: scale(1.12) translateY(-2px);
-  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
-}
-.fixed.bottom-6.right-6 a:active > div {
-  transform: scale(0.92) !important;
-}
-
-/* 11. Micro Trust Pills & Badges Hover Pop */
-.badge-interactive,
-.inline-flex.rounded-full.border {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
-}
-.badge-interactive:hover,
-.inline-flex.rounded-full.border:hover {
-  transform: scale(1.035);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
-}
-
-/* 12. Pre-Footer Bridal Consultation Card Hover Glow */
-footer .rounded-2xl.border-\[\#D4AF37\]\/40 {
-  transition: box-shadow 0.4s ease, border-color 0.4s ease;
-}
-footer .rounded-2xl.border-\[\#D4AF37\]\/40:hover {
-  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.35), 0 0 25px rgba(212, 175, 55, 0.15);
-  border-color: rgba(212, 175, 55, 0.6);
-}
-
-/* 13. Bento Locator Cards Hover Lift */
-#visit-us .bg-\[\#0A0A0A\].border-\[\#3A3320\] {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-              border-color 0.35s ease;
-}
-#visit-us .bg-\[\#0A0A0A\].border-\[\#3A3320\]:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.12);
-  border-color: rgba(212, 175, 55, 0.5);
-}
-
-/* 14. Luxury Gold Ripple Click Animation */
-.gold-ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(241, 215, 122, 0.55) 0%, rgba(212, 175, 55, 0.3) 50%, transparent 75%);
-  transform: scale(0);
-  animation: goldRippleKeyframe 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  pointer-events: none;
-  z-index: 60;
-}
-
-@keyframes goldRippleKeyframe {
-  0% {
-    transform: scale(0);
-    opacity: 0.85;
-  }
-  100% {
-    transform: scale(3.5);
-    opacity: 0;
   }
 }
