@@ -36,7 +36,7 @@ TABLE OF CONTENTS
 - Direct Contact Phone: 094472 51916 / +91 94472 51916 (tel:+919447251916)
 - Direct WhatsApp Channel: https://wa.me/919447251916
 - Verified Public Reputation: 4.8 ★ rating across 90+ verified Google Reviews
-- Official Instagram Handle: @sfj__gold (https://instagram.com/sfj__gold)
+- Official Instagram Handle: @standard.jewellery (https://instagram.com/standard.jewellery)
 - Official Domain: https://standardgold.in/
 
 
@@ -238,7 +238,7 @@ TYPE HIERARCHY:
      * 2. 💎 Master Artistry (Intricate temple filigree to modern solitaire prong settings)
      * 3. 📍 Trusted Local Jeweller (Conveniently located in Payyavoor town)
      * 4. ✨ Custom Made-to-Order (Bespoke bridal heirlooms tailored to budget)
-   - Bottom CTA: Instagram follow pill (@sfj__gold).
+   - Bottom CTA: Instagram follow pill (@standard.jewellery).
 
 9. VISIT OUR PAYYAVOOR SHOWROOM (#visit-us)
    - Background: Dark Canvas (#0A0A0A)
@@ -331,7 +331,7 @@ TYPE HIERARCHY:
   * "✦ Transparent Gold Testing: Accurate karatmeter assessment right in front of you."
   * "✦ Attentive Consultation: Relaxed showroom seating with dedicated bridal styling experts."
   * "✦ Made-to-Order Heirlooms: Bespoke creation for heirloom jewellery remodelling and wedding trousseaus."
-- Social Link: "Follow our updates: @sfj__gold on Instagram"
+- Social Link: "Follow our updates: @standard.jewellery on Instagram"
 
 [WHY CHOOSE US SECTION]
 - Title: "Why Choose Standard Gold & Diamonds"
@@ -340,7 +340,7 @@ TYPE HIERARCHY:
 - Value 2: "💎 Master Artistry — From intricate temple filigree to modern solitaire prong settings, every ornament reflects artisanal care."
 - Value 3: "📍 Trusted Local Jeweller — Conveniently located in Payyavoor town, serving families in Sreekandapuram, Irikkur, Iritty, and Kannur."
 - Value 4: "✨ Custom Made-to-Order — Have a dream heirloom concept or specific budget in mind? Our master craftsmen handcraft custom orders to your request."
-- Button: "Follow us on Instagram @sfj__gold"
+- Button: "Follow us on Instagram @standard.jewellery"
 
 [VISIT SHOWROOM SECTION]
 - Title: "Visit Our Payyavoor Showroom"
@@ -364,7 +364,7 @@ TYPE HIERARCHY:
 - Brand: "Standard Gold & Diamonds • SFJ"
 - Tagline: "Timeless Elegance. Crafted for You."
 - Description: "Premier jewellery showroom in Payyavoor, Kannur. Specializing in bespoke wedding bridal suites, pure 916 gold, and certified diamond collections."
-- Social: "@sfj__gold on Instagram"
+- Social: "@standard.jewellery on Instagram"
 - Navigation Quick Links:
   * Gold & Diamond Collections
   * Bespoke Bridal Suite
